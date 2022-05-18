@@ -1,0 +1,3 @@
+"admin_id","admin_name","address","tel","mail","birthday","admission_day","leave_day","password"
+0,"上田次郎","東京と世田谷区",999999999,"test@com","1965年11月4日",2022/05/18 10:00:00,,"pass"
+1,"山田奈緒子","東京と世田谷区",999999999,"sample@com","1965年10月12日",2022/05/18 10:00:00,,"pass"
