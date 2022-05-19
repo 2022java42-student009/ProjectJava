@@ -8,7 +8,7 @@
 </head>
 <body>
 退会しますがよろしいですか？<br>
-<input type = "submit" value ="退会する">
+<button onclick="location.href=''">退会する</button>
 <button onclick="location.href=''">キャンセル</button>
 </body>
 </html>

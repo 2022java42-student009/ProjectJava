@@ -8,7 +8,7 @@
 </head>
 <body>
 
-退会しました
+<button onclick="location.href=''">退会しました</button>
 
 </body>
 </html>
