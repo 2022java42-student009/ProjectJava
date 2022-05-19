@@ -1,14 +1,17 @@
 package la.bean;
 
 public class AdminBean {
-	private int id;
+	private String id;
 	private String name;
 	private String password;
 
-	public AdminBean(int id, String name,String password) {
+	public AdminBean(String id, String name,String password) {
 		this.id = id;
 		this.name = name;
 		this.password=password;
+		
+	}
+	public AdminBean(String id,String name) {
 		
 	}
 
@@ -16,11 +19,11 @@ public class AdminBean {
 
 	}
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
