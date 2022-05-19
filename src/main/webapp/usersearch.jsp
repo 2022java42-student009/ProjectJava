@@ -14,5 +14,6 @@
 		<br>
 		<input type="text"  name="" >
 		<input type="submit" value="検索">
+	</form>
 </body>
 </html>

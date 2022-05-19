@@ -9,7 +9,7 @@
 <body>
 
 <h1>削除を完了しました</h1><br>
-<input type = "submit" value ="トップに戻る">
+<button onclick="location.href=''">トップに戻る</button>
 
 </body>
 </html>
