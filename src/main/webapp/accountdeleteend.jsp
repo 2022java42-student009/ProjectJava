@@ -4,12 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>admintop</title>
+<title>accountdeleteend</title>
 </head>
 <body>
-	
-	<button onclick="location.href=''">教科書管理</button>
-	<button onclick="location.href=''">会員管理</button>
+
+退会しました
 
 </body>
 </html>
