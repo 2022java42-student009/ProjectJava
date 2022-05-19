@@ -7,12 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>#教科書管理</h2>
-	<form action="" method="post">
-	<br>
-		ISBN番号で検索する:
-		<br>
-		<input type="text"  name="" >
-		<input type="submit" value="検索">
+	<h2>購入が完了しました</h2>
+	<a href=""><button>トップに戻る</button></a>
 </body>
 </html>

@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>#教科書管理</h2>
+	<h2>#ユーザ管理</h2>
 	<form action="" method="post">
 	<br>
-		ISBN番号で検索する:
+		会員IDで検索する:
 		<br>
 		<input type="text"  name="" >
 		<input type="submit" value="検索">
