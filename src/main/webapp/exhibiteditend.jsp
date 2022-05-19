@@ -8,6 +8,6 @@
 </head>
 <body>
 出品が完了しました<br>
-<input type = "submit" value ="トップに戻る">
+<button onclick="location.href=''">トップページに戻る</button>
 </body>
 </html>
