@@ -25,8 +25,7 @@ public class AccountDAO{
 	}
 	
 	public Object AdminLogin() throws DAOException{
-		String sql = "select admin_id,admin_name,mail,password from admin\r\n"
-				+ "where mail = 'test@com'and password = 'pass'";
+		String sql = "select admin_id,admin_name,mail,password from admin where mail = 'test@com'and password = 'pass'";
 		
 		try(Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
