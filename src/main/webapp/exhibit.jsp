@@ -16,7 +16,6 @@ ISBN番号<input type="text" name="number"><br>
 備考<input type="text" name="remarks"><br>
 <input type="submit" value="確認"><br><br>
 	<button onclick="location.href=''">戻る</button>
-	
 </form>
 </body>
 </html>
