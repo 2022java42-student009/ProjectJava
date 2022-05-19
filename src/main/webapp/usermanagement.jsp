@@ -7,12 +7,13 @@
 <title>usermanagement</title>
 </head>
 <body>
-会員ID<input type = "text" name = "userid"><br>
-名前<input type = "text" name = "username"><br>
-パスワード<input type = "text" name = "userpass"><br>
-<input type = "submit" value ="削除"> 
-<input type = "submit" value ="確認"> 
-<input type = "submit" value ="キャンセル"> 
-
+	<form action="" method="post">
+		会員ID<input type ="text" name ="userid"><br>
+		名前<input type ="text" name ="username"><br>
+		パスワード<input type="text" name = "userpass"><br>
+		<button onclick="location.href=''">削除</button>
+		<input type = "submit" value ="確認">
+		<button onclick="location.href=''">キャンセル</button>
+	</form>
 </body>
 </html>

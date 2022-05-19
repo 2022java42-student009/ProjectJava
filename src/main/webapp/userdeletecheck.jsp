@@ -8,7 +8,7 @@
 </head>
 <body>
 本当に削除してよろしいですか？<br>
-	<input type = "submit" value ="削除">
-	<input type = "submit" value ="キャンセル">
+	<input type="submit" value="削除">
+	<button onclick="location.href=''">キャンセル</button>
 </body>
 </html>
