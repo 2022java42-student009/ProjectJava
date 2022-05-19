@@ -105,6 +105,40 @@ public class BookDAO {
 			e.printStackTrace();
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
-
+		
 	}
+	
+	//ISBMから絞り込み
+	public List<BookBean> findByIsbm(int isbmnumber) throws DAOException{
+		String sql = "SELECT * FROM book WHERE book_number = ? ORDER BY book_number";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, isbmnumber);
+			try (ResultSet rs = st.executeQuery();) {
+				List<BookBean> list = new ArrayList<BookBean>();
+				while (rs.next()) {
+					int isbm = rs.getInt("book_number");
+					String title = rs.getString("book_title");
+					int category = rs.getInt("category_id");
+					String author = rs.getString("author");
+
+					BookBean bean = new BookBean(isbm, title, category, author);
+					list.add(bean);
+				}
+				return list;
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
+	
+	
+	//金額
 }
