@@ -77,7 +77,7 @@ public class BookDAO {
 	}
 
 	// カテゴリーから絞り込み
-	public List<BookBean> findByCategory(int categoryId) throws DAOException {
+	/*public List<BookBean> findByCategory(int categoryId) throws DAOException {
 		String sql = "SELECT * FROM book WHERE category_id = ? ORDER BY category_id";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
@@ -106,7 +106,7 @@ public class BookDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 		
-	}
+	}*/
 	
 	//ISBMから絞り込み
 	public List<BookBean> findByIsbm(int isbmnumber) throws DAOException{
@@ -141,4 +141,6 @@ public class BookDAO {
 	
 	
 	//金額
+	
+	
 }
