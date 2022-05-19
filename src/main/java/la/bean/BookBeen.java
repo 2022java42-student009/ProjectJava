@@ -1,6 +1,8 @@
 package la.bean;
 
-public class BookBeen {
+import java.io.Serializable;
+
+public class BookBeen implements Serializable{
 	private int isbm;
 	private String title;
 	private int category;
