@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 import la.bean.AdminBean;
 
@@ -25,7 +24,7 @@ public class AccountDAO {
 	}
 
 	public AdminBean AdminLogin(String mail, String password) throws DAOException {
-		String sql = "select admin_id,admin_name,mail,password from admin where mail = 'test@com'and password = 'pass'";
+		String sql = "select admin_id,admin_name from admin where mail = '?'and password = '?'";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
