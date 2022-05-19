@@ -7,8 +7,9 @@
 <title>admintop</title>
 </head>
 <body>
-	<input type = "submit" value ="教科書管理"><br>
-	<input type = "submit" value ="会員管理"><br>
+	
+	<button onclick="location.href=''">教科書管理</button>
+	<button onclick="location.href=''">会員管理</button>
 
 </body>
 </html>
