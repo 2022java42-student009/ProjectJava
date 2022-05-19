@@ -9,7 +9,7 @@
 <body>
 以下の内容で登録してよいか確認してください<br>
 
-<input type = "submit" value ="修正">
+<button onclick="location.href=''">修正</button>
 <input type = "submit" value ="登録する">
 
 </body>
