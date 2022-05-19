@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h2>購入が完了しました</h2>
-	<a href=""><button>トップに戻る</button></a>
+	<button onclick="location.href=''">トップに戻る</button>
 </body>
 </html>

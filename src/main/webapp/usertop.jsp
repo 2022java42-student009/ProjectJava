@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +7,16 @@
 <title>usertop</title>
 </head>
 <body>
-	<input type = "submit" value ="教科書検索"><br>
-	<input type = "submit" value ="出品"><br>
-	<input type = "submit" value ="出品履歴一覧"><br>
-	<input type = "submit" value ="購入履歴一覧"><br>
-	<input type = "submit" value ="アカウント情報編集"><br>
+	<button onclick="location.href=''">教科書検索</button>
+	<br>
+	<button onclick="location.href=''">出品</button>
+	<br>
+	<button onclick="location.href=''">出品履歴一覧</button>
+	<br>
+	<button onclick="location.href=''">購入履歴一覧</button>
+	<br>
+	<button onclick="location.href=''">アカウント情報編集</button>
+	<br>
+
 </body>
 </html>

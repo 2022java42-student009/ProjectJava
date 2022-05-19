@@ -8,9 +8,10 @@
 </head>
 <body>
 この教科書を購入します。よろしいですか？<br>
+<form action="" method="post">
 	<input type = "submit" value ="購入する">
-	<input type = "submit" value ="いいえ"><br>
-	<input type = "submit" value ="戻る">
-	<input type = "submit" value ="トップページに戻る">
+	<button onclick="location.href=''">いいえ</button>
+</form>
+
 </body>
 </html>
