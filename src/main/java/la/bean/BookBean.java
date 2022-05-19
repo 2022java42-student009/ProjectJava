@@ -2,18 +2,18 @@ package la.bean;
 
 import java.io.Serializable;
 
-public class BookBeen implements Serializable{
+public class BookBean implements Serializable{
 	private int isbm;
 	private String title;
 	private int category;
 	private String author;
-	public BookBeen(int isbm, String title, int category, String author) {
+	public BookBean(int isbm, String title, int category, String author) {
 		this.isbm = isbm;
 		this.title = title;
 		this.category = category;
 		this.author = author;
 	}
-	public BookBeen() {
+	public BookBean() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 	public int getIsbm() {
