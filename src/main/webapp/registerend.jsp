@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,8 @@
 <title>registerend</title>
 </head>
 <body>
-変更が完了しました<br>
-	<input type = "submit" value ="ログインする">
+	変更が完了しました
+	<br>
+	<button onclick="location.href=''">ログイン</button>
 </body>
 </html>
