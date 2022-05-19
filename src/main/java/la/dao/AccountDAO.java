@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 
 import la.bean.AdminBean;
 
@@ -22,28 +23,71 @@ public class AccountDAO {
 		}
 
 	}
-
-	public AdminBean AdminLogin(String mail, String password) throws DAOException {
-		String sql = "select admin_id,admin_name from admin where mail = '?'and password = '?'";
+	//ログインチェック処理
+	public boolean adminLoginCheck(String mail, String password) throws DAOException {
+		String sql = "select * from admin where mail = ? and password = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
-				PreparedStatement st = con.prepareStatement(sql);
-				ResultSet rs = st.executeQuery();) {
-
+				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setString(1, mail);
 			st.setString(2, password);
-
-			String id = rs.getString("admin_id");
-			String name = rs.getString("admin_name");
-
-			AdminBean bean = new AdminBean(id, name);
-
-			return bean;
+			try (ResultSet rs = st.executeQuery();) {
+				if (rs.next()) {
+					return true;
+				}
+				return false;
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
 		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
-			throw new DAOException("レコードの取得に失敗しました");
+			throw new DAOException("レコードの取得に失敗しました。");
 		}
 
 	}
+	//メソッド名適切か？getAdmin or findAdmin
+	public AdminBean findAdmin(String mail) throws DAOException {
+		String sql = "select * from admin where mail = ?";
+		
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setString(1, mail);
+			try (ResultSet rs = st.executeQuery();) {
+				
+				if (rs.next()) {
+					
+					int  id = rs.getInt("admin_id");
+					String name = rs.getString("admin_name");
+					String address = rs.getString("address");
+					int tel = rs.getInt("tel");
+					String email = rs.getString("mail");
+					String birthday = rs.getString("birthday");
+					Timestamp admissionday = rs.getTimestamp("admission_day");
+					Timestamp leaveday = rs.getTimestamp("leave_day");
+					String password = rs.getString("password");
+					
+					AdminBean bean = new AdminBean(id, name, address, tel, email, birthday, admissionday, leaveday, password);
+					return bean;
+				} else {
+					//ユーザーが見つからなかったらnullを返す
+					return null;
+				}
+				
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
+	
+	
 
 }
