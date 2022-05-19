@@ -7,8 +7,8 @@
 <title>usereditend</title>
 </head>
 <body>
-退会しますがよろしいですか？<br>
-<input type = "submit" value ="退会する">
-<button onclick="location.href=''">キャンセル</button>
+	<h1>変更が完了しました</h1>
+	<br>
+	<button onclick="location.href=''">トップに戻る</button>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <title>userdeleteend</title>
 </head>
 <body>
-	<h1>変更が完了しました</h1>
+	<h1>削除を完了しました</h1>
 	<br>
 	<button onclick="location.href=''">トップに戻る</button>
 </body>
