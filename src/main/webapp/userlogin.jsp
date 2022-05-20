@@ -7,16 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form action="/ProjectJava/AccountServlet" method="post">
 	<h2>ログイン</h2>
 	メールアドレス
 	<input type="email" name="email">
 	<br> パスワード
-	<input type="text" name="pass">
+	<input type="password" name="pass"><br><br><br>
+	<button onclick="history.back()">戻る</button>
+	<input type=submit name="action" value="login">
 	<br>
-	<br>
-	<br>
-	<button onclick="location.href=''">戻る</button>
-	<input type="submit" value="ログイン">
-	<br>
+</form>
 </body>
 </html>
