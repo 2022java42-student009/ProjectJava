@@ -9,17 +9,18 @@
 <body>
 以下の内容で登録してよいか確認してください<br>
 
-<c:forEach var="member" items="${members}">
- 
-    ${member.id }
+
+ <form action="" method="post">
     ${member.name}
-    ${member.age }
-  
-</c:forEach>
-
-
-
+    ${member.address}
+    ${member.tel}
+    ${member.mail}
+    ${member.birthday}
+    ${member.password}
+ <input type="hidden" name="action" value="memberlogin">
 <input type = "submit" value ="登録する">
+</form>
+
 <button onclick="location.href='register.jsp'">修正</button>
 </body>
 </html>

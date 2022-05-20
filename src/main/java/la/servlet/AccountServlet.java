@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import la.bean.MemberBean;
 import la.dao.AccountDAO;
 import la.dao.DAOException;
 
@@ -18,7 +19,6 @@ public class AccountServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 
 		String action = request.getParameter("action");
 
@@ -40,7 +40,7 @@ public class AccountServlet extends HttpServlet {
 				e.printStackTrace();
 
 			}
-		} else if(action.equals("adminlogin")) {
+		} else if (action.equals("adminlogin")) {
 			String mail = request.getParameter("email");
 			String pass = request.getParameter("pass");
 			try {
@@ -58,8 +58,28 @@ public class AccountServlet extends HttpServlet {
 				e.printStackTrace();
 
 			}
-		} 
-		
+		} else if (action.equals("registercheck")) {
+			String name = request.getParameter("username");
+			String address = request.getParameter("address");
+			int tel = Integer.parseInt(request.getParameter("tel"));
+			String mail = request.getParameter("mail");
+			String birthday = request.getParameter("birthday");
+			String password = request.getParameter("password");
+
+			MemberBean bean = new MemberBean(name, address, tel, mail, birthday, password);
+			request.setAttribute("member", bean);
+			gotoPage(request, response, "registercheck.jsp");
+
+		} else if (action.equals("register")) {
+			MemberBean bean = (MemberBean) request.getAttribute("member");
+			try {
+				AccountDAO dao = new AccountDAO();
+				dao.memberRegister(bean);
+			} catch (DAOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+		}
 
 	}
 

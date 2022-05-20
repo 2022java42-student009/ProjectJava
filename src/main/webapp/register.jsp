@@ -15,6 +15,7 @@
 		メールアドレス<input type="email" name="mail"><br> 
 		生年月日<input type="text" name="birthday"><br> 
 		パスワード<input type="password" name="password"><br>
+		<input type="hidden" name="action" value="registercheck">
 		<input type="submit" value="確認">
 	</form>
 		<button onclick="location.href='index.jsp'">戻る</button>
