@@ -10,6 +10,7 @@ import java.util.List;
 
 import la.bean.BookBean;
 import la.bean.CategoryBean;
+import la.bean.StockBean;
 
 public class BookDAO {
 	private String url = "jdbc:postgresql:projectjava";
@@ -108,9 +109,9 @@ public class BookDAO {
 		
 	}*/
 	
-	//ISBMから絞り込み
-	public List<BookBean> findByIsbm(int isbmnumber) throws DAOException{
-		String sql = "SELECT * FROM book WHERE book_number = ? ORDER BY book_number";
+	//ISBMから本検索
+	public List<BookBean> findBookByIsbm(int isbmnumber) throws DAOException{
+		String sql = "SELECT * FROM book WHERE book_number = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -139,8 +140,124 @@ public class BookDAO {
 		}
 	}
 	
+	//ISBMから在庫検索
+	public List<StockBean> findStockByIsbm(int booknumber) throws DAOException{
+		String sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE book.book_number = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, booknumber);
+			try (ResultSet rs = st.executeQuery();) {
+				List<StockBean> list = new ArrayList<StockBean>();
+				while (rs.next()) {
+					int stockid = rs.getInt("stock_id");
+					int isbm = rs.getInt("book_number");
+					String title = rs.getString("book_title");
+					int category = rs.getInt("category_id");
+					String author = rs.getString("author");
+					String state = rs.getString("stock_state");
+					int price = rs.getInt("price");
+					String remarks = rs.getString("remarks");
+
+					BookBean book = new BookBean(isbm, title, category, author);
+					StockBean stock = new StockBean(stockid, book, state, price, remarks);
+					list.add(stock);
+				}
+				return list;
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 	
-	//金額
+	//タイトルから在庫検索
+	public List<StockBean> findStockByTitle(String booktitle) throws DAOException{
+		String sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE book.book_title LIKE ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setString(1, "%"+booktitle+"%");
+			try (ResultSet rs = st.executeQuery();) {
+				List<StockBean> list = new ArrayList<StockBean>();
+				while (rs.next()) {
+					int stockid = rs.getInt("stock_id");
+					int isbm = rs.getInt("book_number");
+					String title = rs.getString("book_title");
+					int category = rs.getInt("category_id");
+					String author = rs.getString("author");
+					String state = rs.getString("stock_state");
+					int price = rs.getInt("price");
+					String remarks = rs.getString("remarks");
+
+					BookBean book = new BookBean(isbm, title, category, author);
+					StockBean stock = new StockBean(stockid, book, state, price, remarks);
+					list.add(stock);
+				}
+				return list;
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 	
+	
+	//金額絞り込み
+	public List<StockBean> findStockByTitle(int rangeid) throws DAOException{
+		String sql;
+		switch (rangeid) {
+		case 0:
+			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price BETWEEN 0 AND 1000";
+			break;
+		case 1:
+			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price BETWEEN 1001 AND 5000 ";
+			break;
+		case 2:
+			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price BETWEEN 5001 AND 10000 ";
+			break;
+		case 3:
+			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price > 10000 ";
+			break;
+		default:
+			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number";
+			break;
+		}
+		
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);
+				ResultSet rs = st.executeQuery();) {
+			List<StockBean> list = new ArrayList<StockBean>();
+			while (rs.next()) {
+				int stockid = rs.getInt("stock_id");
+				int isbm = rs.getInt("book_number");
+				String title = rs.getString("book_title");
+				int category = rs.getInt("category_id");
+				String author = rs.getString("author");
+				String state = rs.getString("stock_state");
+				int price = rs.getInt("price");
+				String remarks = rs.getString("remarks");
+
+				BookBean book = new BookBean(isbm, title, category, author);
+				StockBean stock = new StockBean(stockid, book, state, price, remarks);
+				list.add(stock);
+			}
+			return list;
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 	
 }
