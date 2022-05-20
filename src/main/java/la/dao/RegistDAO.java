@@ -44,7 +44,7 @@ public class RegistDAO {
 				int prise = rs.getInt("price");
 				String remarks = rs.getString("remarks");
 				
-				
+				//使用テーブル　レジスト　ブック　ブックカテゴリー
 				
 				
 				
