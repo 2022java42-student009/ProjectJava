@@ -7,7 +7,7 @@
 <title>register</title>
 </head>
 <body>
-	<form action="" method="post">
+	<form action="/ProjectJava/AccountServlet" method="post">
 		<h3>会員登録画面</h3>
 		名前<input type="text" name="username"><br> 
 		住所<input type="text" name="address"><br>

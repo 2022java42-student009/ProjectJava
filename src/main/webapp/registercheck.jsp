@@ -10,14 +10,14 @@
 以下の内容で登録してよいか確認してください<br>
 
 
- <form action="" method="post">
+ <form action="/ProjectJava/AccountServlet" method="post">
     ${member.name}
     ${member.address}
     ${member.tel}
     ${member.mail}
     ${member.birthday}
     ${member.password}
- <input type="hidden" name="action" value="memberlogin">
+ <input type="hidden" name="action" value="register">
 <input type = "submit" value ="登録する">
 </form>
 
