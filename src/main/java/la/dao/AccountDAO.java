@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 
 import la.bean.AdminBean;
+import la.bean.MemberBean;
 
 public class AccountDAO {
 	String url = "jdbc:postgresql:projectjava";
@@ -88,6 +89,71 @@ public class AccountDAO {
 		}
 	}
 	
+	/////////会員ログインチェック処理
+	
+	public boolean memberLoginCheck(String mail, String password) throws DAOException {
+		String sql = "select * from member where mail = ? and password = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setString(1, mail);
+			st.setString(2, password);
+			try (ResultSet rs = st.executeQuery();) {
+				if (rs.next()) {
+					return true;
+				}
+				return false;
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+
+	}
+	//メソッド名適切か？getMember or findMember
+	public MemberBean findMember(String mail) throws DAOException {
+		String sql = "select * from member where mail = ?";
+		
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setString(1, mail);
+			try (ResultSet rs = st.executeQuery();) {
+				
+				if (rs.next()) {
+					
+					int  id = rs.getInt("user_id");
+					String name = rs.getString("user_name");
+					String address = rs.getString("address");
+					int tel = rs.getInt("tel");
+					String email = rs.getString("mail");
+					String birthday = rs.getString("birthday");
+					Timestamp admissionday = rs.getTimestamp("admission_day");
+					Timestamp leaveday = rs.getTimestamp("leave_day");
+					String password = rs.getString("password");
+					
+					MemberBean bean = new MemberBean(id, name, address, tel, email, birthday, admissionday, leaveday, password);
+					return bean;
+				} else {
+					//ユーザーが見つからなかったらnullを返す
+					return null;
+				}
+				
+			} catch (SQLException e) {
+				// TODO: handle exception
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 	
 
 }
