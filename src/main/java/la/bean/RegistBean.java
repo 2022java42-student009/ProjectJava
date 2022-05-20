@@ -4,12 +4,12 @@ import java.sql.Timestamp;
 
 public class RegistBean{
 	private int id;
-	private int book;
+	private BookBean book;
 	private Timestamp registday;
 	private int prise;
 	private String remarks;
 	
-	public RegistBean(int id, int book, Timestamp registday, int prise, String remarks) {
+	public RegistBean(int id, BookBean book, Timestamp registday, int prise, String remarks) {
 		this.id = id;
 		this.book = book;
 		this.registday = registday;
@@ -29,11 +29,11 @@ public class RegistBean{
 		this.id = id;
 	}
 
-	public int getBook() {
+	public BookBean getBook() {
 		return book;
 	}
 
-	public void setBook(int book) {
+	public void setBook(BookBean book) {
 		this.book = book;
 	}
 

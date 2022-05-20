@@ -29,21 +29,25 @@ public class RegistDAO {
 
 	// 登録された本全データ
 	public List<RegistBean> findAllRegist() throws DAOException {
-		String sql = "SELECT * FROM regist";
+		String sql = "select book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,price,remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id WHERE user_id = ?";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
 				ResultSet rs = st.executeQuery();) {
 			
 			List<RegistBean>list = new ArrayList<RegistBean>();
 			while(rs.next()) {
-				int id = rs.getInt("user_id");
-				int isbm = rs.getInt("book_number");
-				Timestamp day= rs.getTimestamp("regist_day");
-				int price = rs.getInt("price");
+				int book = rs.getInt("book_number");
+				String title = rs.getString("book_title");
+				String author = rs.getString("author");
+				String categoryname = rs.getString("category_name");
+				Timestamp registday = rs.getTimestamp("regist_day");
+				int prise = rs.getInt("price");
 				String remarks = rs.getString("remarks");
 				
-				RegistBean bean = new RegistBean(id,isbm,day,price,remarks);
-				list.add(bean);
+				
+				
+				
+				
 			}
 			
 			return list;
@@ -55,7 +59,8 @@ public class RegistDAO {
 	}
 
 	// 会員IDでソートされたデータ
+	
 
-	// 会員ようデータ
+	// 会員ようデータ料金変更
 
 }
