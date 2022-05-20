@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import la.bean.MemberBean;
 import la.dao.AccountDAO;
 import la.dao.DAOException;
 
@@ -26,7 +28,8 @@ public class AccountServlet extends HttpServlet {
 			try {
 				AccountDAO dao = new AccountDAO();
 				if (dao.memberLoginCheck(mail, pass)) {
-					request.setAttribute("member", dao.findMember(mail));
+					HttpSession session = request.getSession();
+					session.setAttribute("member", dao.findMember(mail));
 					gotoPage(request, response, "usertop.jsp");
 				} else {
 					request.setAttribute("errmsg", "メールアドレスかパスワードが間違っています。");
@@ -36,6 +39,45 @@ public class AccountServlet extends HttpServlet {
 			} catch (DAOException e) {
 				e.printStackTrace();
 
+			}
+		} else if (action.equals("adminlogin")) {
+			String mail = request.getParameter("email");
+			String pass = request.getParameter("pass");
+			try {
+				AccountDAO dao = new AccountDAO();
+				if (dao.adminLoginCheck(mail, pass)) {
+					HttpSession session = request.getSession();
+					session.setAttribute("admin", dao.findAdmin(mail));
+					gotoPage(request, response, "admintop.jsp");
+				} else {
+					request.setAttribute("errmsg", "メールアドレスかパスワードが間違っています。");
+					gotoPage(request, response, "adminlogin.jsp");
+				}
+
+			} catch (DAOException e) {
+				e.printStackTrace();
+
+			}
+		} else if (action.equals("registercheck")) {
+			String name = request.getParameter("username");
+			String address = request.getParameter("address");
+			int tel = Integer.parseInt(request.getParameter("tel"));
+			String mail = request.getParameter("mail");
+			String birthday = request.getParameter("birthday");
+			String password = request.getParameter("password");
+
+			MemberBean bean = new MemberBean(name, address, tel, mail, birthday, password);
+			request.setAttribute("member", bean);
+			gotoPage(request, response, "registercheck.jsp");
+
+		} else if (action.equals("register")) {
+			MemberBean bean = (MemberBean) request.getAttribute("member");
+			try {
+				AccountDAO dao = new AccountDAO();
+				dao.memberRegister(bean);
+			} catch (DAOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
 			}
 		}
 

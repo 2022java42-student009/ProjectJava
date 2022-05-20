@@ -25,6 +25,14 @@ public class MemberBean {
 		this.leaveday = leaveday;
 		this.password = password;
 	}
+	public MemberBean(String name, String address, int tel, String mail, String birthday, String password) {
+		this.name = name;
+		this.address = address;
+		this.tel = tel;
+		this.mail = mail;
+		this.birthday = birthday;
+		this.password = password;
+	}
 	public MemberBean() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}

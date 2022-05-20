@@ -1,10 +1,10 @@
 package la.bean;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class RegistBean{
 	private int id;
-	private BookBean book = new BookBean();
+	private BookBean book;
 	private Timestamp registday;
 	private int prise;
 	private String remarks;
@@ -15,6 +15,10 @@ public class RegistBean{
 		this.registday = registday;
 		this.prise = prise;
 		this.remarks = remarks;
+	}
+	
+	public RegistBean() {
+		
 	}
 
 	public int getId() {
