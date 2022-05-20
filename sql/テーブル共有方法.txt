@@ -28,3 +28,7 @@ PostgresSQL(直接接続)を選択
 
 以上でテーブルの共有は以上です
 テーブル内のデータは共有されないので注意してください
+
+update member
+set leave_day = current_timestamp, password = gen_random_uuid()
+where user_id = 3;
