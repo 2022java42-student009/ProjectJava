@@ -35,7 +35,15 @@ public class BuyDAO {
 			List<BuyBean> list = new ArrayList<BuyBean>();
 			while (rs.next()) {
 				int userid = rs.getInt("userid");
-				
+				int id = rs.getInt("id");
+				int isbn = rs.getInt("isbn");
+				String state = rs.getString("state");
+				int salesday = rs.getInt("salesday");
+				int price = rs.getInt("price");
+				String remarks = rs.getString("remarks");
+				String title = rs.getString("titke");
+				int category = rs.getInt("category");
+				String author = rs.getString("author");
 				
 				list.add();
 			}
