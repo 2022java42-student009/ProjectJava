@@ -9,6 +9,7 @@
 <body>
 	変更が完了しました
 	<br>
-	<button onclick="location.href=''">ログイン</button>
+	<button onclick="location.href=''">ログイン</button><br>
+	<button onclick="location.href='index.jsp'">戻る</button>
 </body>
 </html>

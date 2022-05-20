@@ -12,8 +12,8 @@
 <form action="" method="post">
 メールアドレス<input type="email" name="email"><br>
 パスワード<input type="password" name="pass"><br><br><br>
-	<button onclick="location.href=''">戻る</button>
-	<input type="submit" value="ログイン"><br>
+	<button name="action" value="return" onclick="location.href=''">戻る</button>
+	<button name="action" value="login" onclick="location.href=''">ログイン</button>
 </form>
 </body>
 </html>

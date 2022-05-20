@@ -9,7 +9,7 @@
 </head>
 <body>
 	<form action="/ProjectJava/AccountServlet" method="post">
-		<h2>ログイン</h2>
+		<h3>ログイン</h3>
 		メールアドレス <input type="email" name="email"> <br> パスワード <input
 			type="password" name="pass">
 		<c:if test="${not empty errmsg }">
@@ -19,8 +19,8 @@
 		<br>
 		<br>
 		
-		<input type="submit" value="ログイン"> <input type="hidden"
-			name="action" value=memberlogin> <br>
+		<input type="submit" value="ログイン">
+		 <input type="hidden"name="action" value=memberlogin> <br>
 	</form>
 	<br>
 	<button onclick="location.href='index.jsp'">戻る</button>
