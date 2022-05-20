@@ -37,6 +37,23 @@ public class AccountServlet extends HttpServlet {
 				e.printStackTrace();
 
 			}
+		} else if(action.equals("adminlogin")) {
+			String mail = request.getParameter("email");
+			String pass = request.getParameter("pass");
+			try {
+				AccountDAO dao = new AccountDAO();
+				if (dao.adminLoginCheck(mail, pass)) {
+					request.setAttribute("admin", dao.findAdmin(mail));
+					gotoPage(request, response, "admintop.jsp");
+				} else {
+					request.setAttribute("errmsg", "メールアドレスかパスワードが間違っています。");
+					gotoPage(request, response, "adminlogin.jsp");
+				}
+
+			} catch (DAOException e) {
+				e.printStackTrace();
+
+			}
 		}
 
 	}

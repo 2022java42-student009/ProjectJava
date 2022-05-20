@@ -18,11 +18,9 @@
 		<br>
 		<br>
 		<br>
-		
-		<input type="submit" value="ログイン"> <input type="hidden"
-			name="action" value=memberlogin> <br>
+		<input type="submit" value="ログイン"> 
+		<input type="hidden" name="action" value="memberlogin">
 	</form>
-	<br>
 	<button onclick="location.href='index.jsp'">戻る</button>
 </body>
 </html>
