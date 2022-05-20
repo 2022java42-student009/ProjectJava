@@ -14,7 +14,8 @@
 	<br> パスワード
 	<input type="password" name="pass"><br><br><br>
 	<button onclick="history.back()">戻る</button>
-	<input type=submit name="action" value="login">
+	<input type="submit" value="ログイン">
+	<input type="hidden" name="action" value=memberlogin>
 	<br>
 </form>
 </body>

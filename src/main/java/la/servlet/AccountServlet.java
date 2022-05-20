@@ -20,7 +20,7 @@ public class AccountServlet extends HttpServlet {
 
 		String action = request.getParameter("action");
 
-		if (action.equals("login")) {
+		if (action.equals("memberlogin")) {
 			String mail = request.getParameter("email");
 			String pass = request.getParameter("pass");
 			try {
