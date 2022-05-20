@@ -10,7 +10,7 @@
 
 <h3>
 <button onclick="location.href=''">管理者ログイン</button><br>
-<button onclick="location.href=''">会員ログイン</button><br>
+<button onclick="location.href='userlogin.jsp'">会員ログイン</button><br>
 <button onclick="location.href=''">新規会員登録</button>
 </h3>
 

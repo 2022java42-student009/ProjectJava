@@ -18,9 +18,11 @@
 		<br>
 		<br>
 		<br>
-		<button onclick="history.back()">戻る</button>
+		
 		<input type="submit" value="ログイン"> <input type="hidden"
 			name="action" value=memberlogin> <br>
 	</form>
+	<br>
+	<button onclick="location.href='index.jsp'">戻る</button>
 </body>
 </html>
