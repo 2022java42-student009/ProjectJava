@@ -7,7 +7,8 @@
 <title>buyloglist</title>
 </head>
 <body>
-購入履歴一覧<br>
+	購入履歴一覧
+	<br>
 	<button onclick="location.href=''">戻る</button>
 
 
