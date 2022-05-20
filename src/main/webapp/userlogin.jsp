@@ -15,17 +15,10 @@
 		<c:if test="${not empty errmsg }">
 			<p style="color: red;">${errmsg }</p>
 		</c:if>
-		<br>
-		<br>
-		<br>
-<<<<<<< HEAD
-		
-		<input type="submit" value="ログイン">
-		 <input type="hidden"name="action" value=memberlogin> <br>
-=======
-		<input type="submit" value="ログイン"> 
-		<input type="hidden" name="action" value="memberlogin">
->>>>>>> 81cbe8d1c62817f1b61273286f20da5eca236114
+		<br> <br> <br> <input type="submit" value="ログイン">
+		<input type="hidden" name="action" value=memberlogin> <br>
+
+
 	</form>
 	<button onclick="location.href='index.jsp'">戻る</button>
 </body>
