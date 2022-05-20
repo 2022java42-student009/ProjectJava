@@ -10,7 +10,7 @@
 	<h1>教科書更新画面</h1>
 	<form action="" method="post">
 		ISBN
-		<input type="number" name="number">
+		<input type="text" name="number">
 		<br> 分類
 			<select name="example">
 				<option value="選択肢1">選択肢1</option>
@@ -22,7 +22,7 @@
 			<br> 著者名
 			<input type="text" name="author">
 			<br> 金額
-			<input type="number" name="price">
+			<input type="text" name="price">
 			<br> 備考
 			<input type="text" name="remarks">
 			<br>
