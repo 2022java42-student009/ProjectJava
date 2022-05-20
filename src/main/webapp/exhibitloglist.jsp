@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>buyloglist</title>
+<title>Insert title here</title>
 </head>
 <body>
-	購入履歴一覧
-	<br>
-	<button onclick="location.href=''">戻る</button>
-
 
 </body>
 </html>
