@@ -4,17 +4,15 @@ import java.security.Timestamp;
 
 public class RegistBean{
 	private int id;
-	private int book_number;
 	private BookBean book = new BookBean();
-	private Timestamp regist_day;
+	private Timestamp registday;
 	private int prise;
 	private String remarks;
 	
-	public RegistBean(int id, int book_number, BookBean book, Timestamp regist_day, int prise, String remarks) {
+	public RegistBean(int id, BookBean book, Timestamp registday, int prise, String remarks) {
 		this.id = id;
-		this.book_number = book_number;
 		this.book = book;
-		this.regist_day = regist_day;
+		this.registday = registday;
 		this.prise = prise;
 		this.remarks = remarks;
 	}
@@ -27,14 +25,6 @@ public class RegistBean{
 		this.id = id;
 	}
 
-	public int getBook_number() {
-		return book_number;
-	}
-
-	public void setBook_number(int book_number) {
-		this.book_number = book_number;
-	}
-
 	public BookBean getBook() {
 		return book;
 	}
@@ -43,12 +33,12 @@ public class RegistBean{
 		this.book = book;
 	}
 
-	public Timestamp getRegist_day() {
-		return regist_day;
+	public Timestamp getRegistday() {
+		return registday;
 	}
 
-	public void setRegist_day(Timestamp regist_day) {
-		this.regist_day = regist_day;
+	public void setRegistday(Timestamp registday) {
+		this.registday = registday;
 	}
 
 	public int getPrise() {
