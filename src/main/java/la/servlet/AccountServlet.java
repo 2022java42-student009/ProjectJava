@@ -31,6 +31,7 @@ public class AccountServlet extends HttpServlet {
 				AccountDAO dao = new AccountDAO();
 				if (dao.memberLoginCheck(mail, pass)) {
 					session.setAttribute("member", dao.findMember(mail));
+					session.setAttribute("loginstate", true);
 					gotoPage(request, response, "usertop.jsp");
 				} else {
 					request.setAttribute("errmsg", "メールアドレスかパスワードが間違っています。");
@@ -49,6 +50,7 @@ public class AccountServlet extends HttpServlet {
 				if (dao.adminLoginCheck(mail, pass)) {
 					
 					session.setAttribute("admin", dao.findAdmin(mail));
+					session.setAttribute("loginstate", true);
 					gotoPage(request, response, "admintop.jsp");
 				} else {
 					request.setAttribute("errmsg", "メールアドレスかパスワードが間違っています。");
