@@ -35,6 +35,24 @@ public class RegistServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			
+			
+			
+			//出品
+		}else if(action.equals("listing")) {
+			int isbm = Integer.parseInt(request.getParameter("number"));
+			int price = Integer.parseInt(request.getParameter("price"));
+			String state = request.getParameter("example");
+			String remarks = request.getParameter("remarks");
+			
+			try {
+				RegistDAO dao = new RegistDAO();
+				MemberBean bean = (MemberBean)session.getAttribute("member");
+				dao.listingRegist(isbm, state, price, remarks, bean.getId());
+				gotoPage(request, response, "/exhibitend.jsp");
+			}catch (DAOException e) {
+				e.printStackTrace();
+			}
+			
 		}
 		
 	}

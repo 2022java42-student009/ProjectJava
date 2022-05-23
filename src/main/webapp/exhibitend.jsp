@@ -9,6 +9,6 @@
 <body>
 	出品が完了しました
 	<br>
-	<button onclick="location.href=''">トップに戻る</button>
+	<button onclick="location.href='usertop.jsp'">トップに戻る</button>
 </body>
 </html>

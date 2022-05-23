@@ -44,9 +44,9 @@
 		${stock.book.author }
 		${stock.book.categoryname }
 		
-		<button onclick="location.href='buycheck.jsp'">購入</button>
+		<button onclick="location.href='/ProjectJava/BuyServlet?action=buycheck&stockid=${stock.id}'">購入</button>
 	</div>
 	</c:forEach>
-	
+	<button onclick="location.href='usertop.jsp'">戻る</button>
 </body>
 </html>
