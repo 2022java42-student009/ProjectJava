@@ -9,7 +9,7 @@
 <body>
 		以下の情報で登録します。よろしいですか？ <br>
 	<form action="/ProjectJava/RegistServlet" method="post">
-		ISBM番号:${listingdata.book}<br>
+		ISBM番号:${listingdata.book.isbm}<br>
 		値段:${listingdata.price}<br>
 		状態:${listingdata.state}<br>
 		備考:${listingdata.remarks}<br>
