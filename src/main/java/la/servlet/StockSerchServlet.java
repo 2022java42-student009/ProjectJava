@@ -14,6 +14,7 @@ import la.bean.CategoryBean;
 import la.bean.StockBean;
 import la.dao.BookDAO;
 import la.dao.DAOException;
+import la.dao.StockDAO;
 
 @WebServlet("/StockSerchServlet")
 public class StockSerchServlet extends HttpServlet {
@@ -25,14 +26,14 @@ public class StockSerchServlet extends HttpServlet {
 //		HttpSession session = request.getSession();
 		String action = request.getParameter("action");
 
-		if (action == null || action.length() == 0 || action.equals("top")) {
+		if (action == null || action.length() == 0) {
 			gotoPage(request, response, "booksearch.jsp");
 
 		} else if (action.equals("category")) {
 			int categoryid = Integer.parseInt(request.getParameter("categoryid"));
 
 			try {
-				BookDAO dao = new BookDAO();
+				StockDAO dao = new StockDAO();
 				List<StockBean> stocks = dao.findStockByCategory(categoryid);
 				request.setAttribute("stocks", stocks);
 				gotoPage(request, response, "booksearch.jsp");
@@ -45,7 +46,7 @@ public class StockSerchServlet extends HttpServlet {
 			int isbn = Integer.parseInt(request.getParameter("id"));
 
 			try {
-				BookDAO dao = new BookDAO();
+				StockDAO dao = new StockDAO();
 				List<StockBean> stocks = dao.findStockByIsbm(isbn);
 				request.setAttribute("stocks", stocks);
 				gotoPage(request, response, "booksearch.jsp");
@@ -58,7 +59,7 @@ public class StockSerchServlet extends HttpServlet {
 			String title = request.getParameter("name");
 
 			try {
-				BookDAO dao = new BookDAO();
+				StockDAO dao = new StockDAO();
 				List<StockBean> stocks = dao.findStockByTitle(title);
 				request.setAttribute("stocks", stocks);
 				gotoPage(request, response, "booksearch.jsp");
@@ -71,7 +72,7 @@ public class StockSerchServlet extends HttpServlet {
 			int range = Integer.parseInt(request.getParameter("pricerange"));
 
 			try {
-				BookDAO dao = new BookDAO();
+				StockDAO dao = new StockDAO();
 				List<StockBean> stocks = dao.findStockByPrice(range);
 				request.setAttribute("stocks", stocks);
 				gotoPage(request, response, "booksearch.jsp");
