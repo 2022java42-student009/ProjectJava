@@ -11,8 +11,10 @@
 	<br>
 	<button onclick="location.href=''">出品</button>
 	<br>
-	<button onclick="location.href=''">出品履歴一覧</button>
-	<br>
+	<form action="/ProjectJava/RegistServlet" method="post">
+	<button>出品履歴一覧</button>
+	<input type="hidden" name="action" value=registlist>
+	</form>
 	<button onclick="location.href=''">購入履歴一覧</button>
 	<br>
 	<button onclick="location.href=''">アカウント情報編集</button>
