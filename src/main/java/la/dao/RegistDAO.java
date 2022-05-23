@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import la.bean.RegistBean;
+import la.bean.RegistArrangeBean;
 
 public class RegistDAO {
 	private String url = "jdbc:postgresql:projectjava";
@@ -28,13 +28,13 @@ public class RegistDAO {
 	}
 
 	// 登録された本全データ
-	public List<RegistBean> findAllRegist() throws DAOException {
+	public List<RegistArrangeBean> findAllRegist() throws DAOException {
 		String sql = "select book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,price,remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id WHERE user_id = ?";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
 				ResultSet rs = st.executeQuery();) {
 			
-			List<RegistBean>list = new ArrayList<RegistBean>();
+			List<RegistArrangeBean>list = new ArrayList<RegistArrangeBean>();
 			while(rs.next()) {
 				int book = rs.getInt("book_number");
 				String title = rs.getString("book_title");
@@ -45,8 +45,8 @@ public class RegistDAO {
 				String remarks = rs.getString("remarks");
 				
 				//使用テーブル　レジスト　ブック　ブックカテゴリー
-				
-				
+				RegistArrangeBean bean = new RegistArrangeBean(book, title, author, categoryname, registday, prise, remarks);
+				list.add(bean);
 				
 			}
 			
