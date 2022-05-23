@@ -13,7 +13,8 @@ import la.bean.AdminBean;
 import la.bean.MemberBean;
 
 public class AccountDAO {
-	String url = "jdbc:postgresql:projectjava";
+//	String url = "jdbc:postgresql:projectjava";
+	String url = "jdbc:postgresql:textbook";
 	String user = "postgres";
 	String pass = "himitu";
 
@@ -227,6 +228,7 @@ public class AccountDAO {
 	}
 
 	// 会員登録
+//	public void memberRegister(MemberBean member) throws DAOException {
 	public void memberRegister(MemberBean member) throws DAOException {
 
 		String sql = "INSERT INTO member(user_name,address,tel,mail,birthday,admission_day,password) VALUES(?,?,?,?,?,current_timestamp,?)";

@@ -72,7 +72,7 @@ public class AccountServlet extends HttpServlet {
 			gotoPage(request, response, "registercheck.jsp");
 
 		} else if (action.equals("register")) {
-			MemberBean bean = (MemberBean) request.getAttribute("member");
+			MemberBean bean =  (MemberBean) request.getAttribute("member");
 			try {
 				AccountDAO dao = new AccountDAO();
 				dao.memberRegister(bean);
