@@ -29,7 +29,6 @@ public class RegistServlet extends HttpServlet {
 			RegistDAO dao = new RegistDAO();
 			MemberBean bean = (MemberBean)session.getAttribute("member");
 			session.setAttribute("Regist", dao.findAllRegist(bean.getId()));
-			System.out.println(bean.getId());//テストコード
 			gotoPage(request, response, "/exhibitloglist.jsp");
 			
 			} catch (DAOException e) {
