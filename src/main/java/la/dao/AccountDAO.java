@@ -67,7 +67,7 @@ public class AccountDAO {
 					int id = rs.getInt("admin_id");
 					String name = rs.getString("admin_name");
 					String address = rs.getString("address");
-					int tel = rs.getInt("tel");
+					String tel = rs.getString("tel");
 					String email = rs.getString("mail");
 					String birthday = rs.getString("birthday");
 					Timestamp admissionday = rs.getTimestamp("admission_day");
@@ -135,7 +135,7 @@ public class AccountDAO {
 					int id = rs.getInt("user_id");
 					String name = rs.getString("user_name");
 					String address = rs.getString("address");
-					int tel = rs.getInt("tel");
+					String tel = rs.getString("tel");
 					String email = rs.getString("mail");
 					String birthday = rs.getString("birthday");
 					Timestamp admissionday = rs.getTimestamp("admission_day");
@@ -175,7 +175,7 @@ public class AccountDAO {
 					int userid = rs.getInt("user_id");
 					String name = rs.getString("user_name");
 					String address = rs.getString("address");
-					int tel = rs.getInt("tel");
+					String tel = rs.getString("tel");
 					String email = rs.getString("mail");
 					String birthday = rs.getString("birthday");
 					Timestamp admissionday = rs.getTimestamp("admission_day");
@@ -207,7 +207,7 @@ public class AccountDAO {
 				int userid = rs.getInt("user_id");
 				String name = rs.getString("user_name");
 				String address = rs.getString("address");
-				int tel = rs.getInt("tel");
+				String tel = rs.getString("tel");
 				String email = rs.getString("mail");
 				String birthday = rs.getString("birthday");
 				Timestamp admissionday = rs.getTimestamp("admission_day");
@@ -235,7 +235,7 @@ public class AccountDAO {
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setString(1, member.getName());
 			st.setString(2, member.getAddress());
-			st.setInt(3, member.getTel());
+			st.setString(3, member.getTel());
 			st.setString(4, member.getMail());
 			st.setString(5, member.getBirthday());
 			st.setString(6, member.getPassword());

@@ -7,14 +7,14 @@ public class AdminBean implements Serializable{
 	private int  id;
 	private String name;
 	private String address;
-	private int tel;
+	private String tel;
 	private String mail;
 	private String birthday;
 	private Timestamp admissionday;
 	private Timestamp leaveday;
 	private String password;
 	
-	public AdminBean(int id, String name, String address, int tel, String mail, String birthday, Timestamp admissionday,
+	public AdminBean(int id, String name, String address, String tel, String mail, String birthday, Timestamp admissionday,
 			Timestamp leaveday, String password) {
 		this.id = id;
 		this.name = name;
@@ -55,11 +55,11 @@ public class AdminBean implements Serializable{
 		this.address = address;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 

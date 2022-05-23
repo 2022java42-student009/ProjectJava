@@ -6,13 +6,13 @@ public class MemberBean {
 	private int  id;
 	private String name;
 	private String address;
-	private int tel;
+	private String tel;
 	private String mail;
 	private String birthday;
 	private Timestamp admissionday;
 	private Timestamp leaveday;
 	private String password;
-	public MemberBean(int id, String name, String address, int tel, String mail, String birthday,
+	public MemberBean(int id, String name, String address, String tel, String mail, String birthday,
 			Timestamp admissionday, Timestamp leaveday, String password) {
 		
 		this.id = id;
@@ -25,7 +25,7 @@ public class MemberBean {
 		this.leaveday = leaveday;
 		this.password = password;
 	}
-	public MemberBean(String name, String address, int tel, String mail, String birthday, String password) {
+	public MemberBean(String name, String address, String tel, String mail, String birthday, String password) {
 		this.name = name;
 		this.address = address;
 		this.tel = tel;
@@ -54,10 +54,10 @@ public class MemberBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 	public String getMail() {
