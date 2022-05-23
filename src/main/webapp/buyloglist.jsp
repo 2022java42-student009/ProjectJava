@@ -26,8 +26,6 @@
 				<td align="center">${buy.book}</td>
 				<td align="center">${buy.categoryname}</td>
 				<td align="center">${buy.price}</td>
-				<td align="center"><button>編集</button><button>削除</button></td>
-				
 			</tr>
 
 		</c:forEach>
