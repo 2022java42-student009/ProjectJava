@@ -2,12 +2,12 @@ package la.bean;
 
 public class StockBean {
 	private int id;
-	private BookBean book = new BookBean();
+	private int book;
 	private String state;
 	private int price;
 	private String remarks;
 	
-	public StockBean(int id, BookBean book, String state, int price, String remarks) {
+	public StockBean(int id, int book, String state, int price, String remarks) {
 		this.id = id;
 		this.book = book;
 		this.state = state;
@@ -23,10 +23,10 @@ public class StockBean {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public BookBean getBook() {
+	public int getBook() {
 		return book;
 	}
-	public void setBook(BookBean book) {
+	public void setBook(int book) {
 		this.book = book;
 	}
 	public String getState() {

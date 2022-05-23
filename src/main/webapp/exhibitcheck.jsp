@@ -7,11 +7,16 @@
 <title>exhibitcheck</title>
 </head>
 <body>
-	<form>
 		以下の情報で登録します。よろしいですか？ <br>
-		<button onclick="location.href=''">戻る</button>
+	<form action="/ProjectJava/RegistServlet" method="post">
+		ISBM番号:${listingdata.book}<br>
+		値段:${listingdata.price}<br>
+		状態:${listingdata.state}<br>
+		備考:${listingdata.remarks}<br>
+		<input type="hidden" name="action" value="listing">
 		<input type="submit" value="出品する"> <br>
 	</form>
+	<button onclick="location.href='exhibit.jsp'">修正</button>
 
 </body>
 </html>

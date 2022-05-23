@@ -20,7 +20,7 @@
 		備考<input type="text" name="remarks"><br>
 		
 		<input type="submit" value="登録確認">
-		<input type="hidden" name="action" value=listing> <br>
+		<input type="hidden" name="action" value=listingcheck> <br>
 	</form>
 	<button onclick="location.href='usertop.jsp'">戻る</button>
 </body>
