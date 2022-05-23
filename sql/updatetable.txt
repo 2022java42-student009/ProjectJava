@@ -1,0 +1,4 @@
+DROP TABLE admin;
+DROP TABLE member;
+\i admin.sql;
+\i member.sql;
