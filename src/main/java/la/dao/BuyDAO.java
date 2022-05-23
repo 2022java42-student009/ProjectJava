@@ -5,18 +5,17 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-import la.bean.BookBean;
-import la.bean.BuyBean;
-import la.bean.StockBean;
+import la.bean.BuyArrangeBean;
 
 public class BuyDAO {
 	String url = "jdbc:postgresql:projectjava";
 	String user = "student";
 	String pass = "himitu";
-	
+
 	public BuyDAO() throws DAOException {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -25,36 +24,39 @@ public class BuyDAO {
 			throw new DAOException("ドライバの登録に失敗しました");
 		}
 	}
-	public List<BuyBean> findAllBuylog() throws DAOException {
-		String sql = "SELECT b.user_id, s.stock_id, bo.book_number, s.stock_state, b.selesday, b.price, b.remarks, bo.book_title, bo.category_id, bo.author \n"
-				+ "    FROM buy b JOIN stock s ON b.stock_id = s.stock_id \n"
-				+ "    JOIN book bo ON s.book_number = bo.book_number;";
-		
-		
+
+	public List<BuyArrangeBean> findAllBuylog(int userid) throws DAOException {
+		String sql = "SELECT buy.selesday, book.book_title, stock.book_number,bookcategory.category_name, stock.price FROM buy JOIN stock ON buy.stock_id = stock.stock_id JOIN book ON stock.book_number = book.book_number JOIN bookcategory ON book.category_id = bookcategory.category_id WHERE user_id = ?;";
+
 		try (Connection con = DriverManager.getConnection(url, user, pass);
-				PreparedStatement st = con.prepareStatement(sql);
-				ResultSet rs = st.executeQuery();) {
-			List<BuyBean> list = new ArrayList<BuyBean>();
-			while (rs.next()) {
-				int userid = rs.getInt("userid");
-				int id = rs.getInt("id");
-				int isbn = rs.getInt("isbn");
-				String state = rs.getString("state");
-				int salesday = rs.getInt("salesday");
-				int price = rs.getInt("price");
-				String remarks = rs.getString("remarks");
-				String title = rs.getString("titke");
-				int category = rs.getInt("category");
-				String author = rs.getString("author");
-				StockBean sbean = new StockBean(id, BookBean book,state,price,remarks);
-				BuyBean bbean = new BuyBean(userid,book, selesday, price, remarks);
-				list.add(bean);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1,userid);
+			
+			try (ResultSet rs = st.executeQuery();) {
+
+				List<BuyArrangeBean> list = new ArrayList<BuyArrangeBean>();
+				while (rs.next()) {
+					Timestamp selesday = rs.getTimestamp("selesday");
+					String title = rs.getString("book_titke");
+					int book = rs.getInt("book_number");
+					String bookcategory = rs.getString("category_name");
+					int price = rs.getInt("price");
+
+					BuyArrangeBean bean = new BuyArrangeBean(selesday, title, book, bookcategory, price);
+					list.add(bean);
+
+				}
+				return list;
+			} catch (SQLException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
 			}
-			return list;
 		} catch (SQLException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 			throw new DAOException("レコードの取得に失敗しました。");
+
 		}
 	}
 }
