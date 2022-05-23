@@ -9,7 +9,7 @@
 <body>
 	<button onclick="location.href=''">教科書検索</button>
 	<br>
-	<button onclick="location.href=''">出品</button>
+	<button onclick="location.href='exhibit.jsp'">出品</button>
 	<br>
 	<form action="/ProjectJava/RegistServlet" method="post">
 	<button>出品履歴一覧</button>

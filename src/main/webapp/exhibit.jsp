@@ -13,9 +13,9 @@
 			type="text" name="price"><br>
 		<%--状態もプルダウンの方がいいのか（新品、未使用、使用済み等）--%>
 		状態<select name="example">
-			<option value="選択肢1">選択肢1</option>
-			<option value="選択肢2">選択肢2</option>
-			<option value="選択肢3">選択肢3</option>
+			<option value="選択肢1">新品</option>
+			<option value="選択肢2">未使用</option>
+			<option value="選択肢3">中古</option>
 		</select> <br>
 		<button onclick="location.href=''">戻る</button>
 	</form>
