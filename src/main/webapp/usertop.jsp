@@ -7,7 +7,7 @@
 <title>usertop</title>
 </head>
 <body>
-	<button onclick="location.href=''">教科書検索</button>
+	<button onclick="location.href='/ProjectJava/StockSerchServlet'">教科書検索</button>
 	<br>
 	<button onclick="location.href='exhibit.jsp'">出品</button>
 	<br>
