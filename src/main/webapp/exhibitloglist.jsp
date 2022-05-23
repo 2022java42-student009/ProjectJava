@@ -19,6 +19,7 @@
 				<td>登録日</td>
 				<td>登録値段</td>
 				<td>備考</td>
+				<td>情報編集</td>
 			</tr>
 			
 		<c:forEach items="${Regist}" var="regist">
@@ -30,13 +31,15 @@
 				<td align="right">${regist.registday}</td>
 				<td align="right">${regist.price}</td>
 				<td align="right">${regist.remarks}</td>
+				<td align="right"><button>編集</button><button>削除</button></td>
+				
 			</tr>
 
 		</c:forEach>
 	</table>
 	
 	<br>
-	<button onclick="location.href=''">戻る</button>
+	<button onclick="location.href='usertop.jsp'">戻る</button>
 
 </body>
 </html>
