@@ -47,7 +47,7 @@ public class TestServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String action = request.getParameter("action");
 		if (action.equals("Registcheck")) {
-			int userid = 2;
+			int userid = 1;
 			try {
 				RegistDAO dao = new RegistDAO();
 				request.setAttribute("Regist", dao.findAllRegist(userid));

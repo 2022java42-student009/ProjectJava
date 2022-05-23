@@ -64,7 +64,7 @@ public class RegistDAO {
 		}
 	}
 
-	// 会員IDでソートされたデータ
+	// ISBMでソートされたデータ
 
 	// 会員ようデータ料金変更
 
