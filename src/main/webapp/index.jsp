@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<jsp:include page="/userheader.jsp"/>
+
 <h2 style="text-align:center">教科書販売システム</h2>
 <button onclick="location.href='adminlogin.jsp'">管理者ログイン</button><br>
 <button onclick="location.href='userlogin.jsp'">会員ログイン</button><br>

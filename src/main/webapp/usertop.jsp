@@ -7,6 +7,7 @@
 <title>usertop</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	<button onclick="location.href='/ProjectJava/StockSerchServlet'">教科書検索</button>
 	<br>
 	<button onclick="location.href='exhibit.jsp'">出品</button>

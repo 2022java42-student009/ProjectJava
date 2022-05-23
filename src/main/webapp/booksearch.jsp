@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	<h2>教科書検索</h2>
 	カテゴリー検索:
 	<c:forEach items="${categories}" var="category">

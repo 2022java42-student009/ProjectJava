@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import la.bean.MemberBean;
+import la.bean.StockBean;
 import la.dao.DAOException;
 import la.dao.RegistDAO;
 
@@ -38,16 +39,27 @@ public class RegistServlet extends HttpServlet {
 			
 			
 			//出品
-		}else if(action.equals("listing")) {
+		}else if(action.equals("listingcheck")) {
 			int isbm = Integer.parseInt(request.getParameter("number"));
 			int price = Integer.parseInt(request.getParameter("price"));
 			String state = request.getParameter("example");
 			String remarks = request.getParameter("remarks");
 			
+			
+				MemberBean bean = (MemberBean)session.getAttribute("member");
+				StockBean Sbean = new StockBean(bean.getId(),isbm,state,price,remarks);
+				
+				session.setAttribute("listingdata", Sbean);
+				gotoPage(request, response, "/exhibitcheck.jsp");
+				
+				
+		}else if(action.equals("listing")) {
+			
 			try {
 				RegistDAO dao = new RegistDAO();
+				StockBean Sbean = (StockBean)session.getAttribute("listingdata");
 				MemberBean bean = (MemberBean)session.getAttribute("member");
-				dao.listingRegist(isbm, state, price, remarks, bean.getId());
+				dao.listingRegist(Sbean.getBook(), Sbean.getState(), Sbean.getPrice(), Sbean.getRemarks(), bean.getId());
 				gotoPage(request, response, "/exhibitend.jsp");
 			}catch (DAOException e) {
 				e.printStackTrace();

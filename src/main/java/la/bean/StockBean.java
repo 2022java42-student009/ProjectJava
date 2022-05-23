@@ -2,7 +2,7 @@ package la.bean;
 
 public class StockBean {
 	private int id;
-	private BookBean book = new BookBean();
+	private BookBean book;
 	private String state;
 	private int price;
 	private String remarks;
