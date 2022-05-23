@@ -1,0 +1,1 @@
+select setval ('member_user_id_seq', 1, false);
