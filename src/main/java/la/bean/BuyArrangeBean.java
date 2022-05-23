@@ -3,18 +3,27 @@ package la.bean;
 import java.sql.Timestamp;
 
 public class BuyArrangeBean{
+	private int userid;
 	private Timestamp selesday;
 	private String title;
 	private int book;
 	private String categoryname;
 	private int price;
 	
-	public BuyArrangeBean(Timestamp selesday, String title, int book, String categoryname, int price) {
+	public BuyArrangeBean(int userid,Timestamp selesday, String title, int book, String categoryname, int price) {
 		this.selesday = selesday;
 		this.title = title;
 		this.book = book;
 		this.categoryname = categoryname;
 		this.price = price;
+	}
+	
+	public int getUserid() {
+		return userid;
+	}
+	
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 
 	public Timestamp getSelesday() {
