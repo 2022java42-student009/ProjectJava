@@ -7,9 +7,9 @@
 <title>registerend</title>
 </head>
 <body>
-	変更が完了しました
+	会員登録が完了しました
 	<br>
-	<button onclick="location.href=''">ログイン</button><br>
+	<button onclick="location.href='userlogin'">ログイン</button><br>
 	<button onclick="location.href='index.jsp'">戻る</button>
 </body>
 </html>

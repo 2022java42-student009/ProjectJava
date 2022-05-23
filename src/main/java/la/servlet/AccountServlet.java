@@ -20,6 +20,7 @@ public class AccountServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 
 		String action = request.getParameter("action");
 
@@ -29,7 +30,6 @@ public class AccountServlet extends HttpServlet {
 			try {
 				AccountDAO dao = new AccountDAO();
 				if (dao.memberLoginCheck(mail, pass)) {
-					HttpSession session = request.getSession();
 					session.setAttribute("member", dao.findMember(mail));
 					gotoPage(request, response, "usertop.jsp");
 				} else {
@@ -47,7 +47,7 @@ public class AccountServlet extends HttpServlet {
 			try {
 				AccountDAO dao = new AccountDAO();
 				if (dao.adminLoginCheck(mail, pass)) {
-					HttpSession session = request.getSession();
+					
 					session.setAttribute("admin", dao.findAdmin(mail));
 					gotoPage(request, response, "admintop.jsp");
 				} else {
@@ -68,11 +68,12 @@ public class AccountServlet extends HttpServlet {
 			String password = request.getParameter("password");
 
 			MemberBean bean = new MemberBean(name, address, tel, mail, birthday, password);
-			request.setAttribute("member", bean);
+			
+			session.setAttribute("member", bean);
 			gotoPage(request, response, "registercheck.jsp");
 
 		} else if (action.equals("register")) {
-			MemberBean bean =  (MemberBean) request.getAttribute("member");
+			MemberBean bean =  (MemberBean) session.getAttribute("member");
 			try {
 				AccountDAO dao = new AccountDAO();
 				dao.memberRegister(bean);

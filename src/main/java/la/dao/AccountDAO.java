@@ -13,8 +13,8 @@ import la.bean.AdminBean;
 import la.bean.MemberBean;
 
 public class AccountDAO {
-//	String url = "jdbc:postgresql:projectjava";
-	String url = "jdbc:postgresql:textbook";
+	String url = "jdbc:postgresql:projectjava";
+//	String url = "jdbc:postgresql:textbook";
 	String user = "postgres";
 	String pass = "himitu";
 
