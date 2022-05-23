@@ -9,7 +9,7 @@
 <body>
 	会員登録が完了しました
 	<br>
-	<button onclick="location.href='userlogin'">ログイン</button><br>
+	<button onclick="location.href='userlogin.jsp'">ログイン</button><br>
 	<button onclick="location.href='index.jsp'">戻る</button>
 </body>
 </html>
