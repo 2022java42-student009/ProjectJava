@@ -8,16 +8,20 @@
 </head>
 <body>
 	教科書登録
-	<form action="" method="post">
-		ISBN番号<input type="text" name="number"><br> 値段<input
-			type="text" name="price"><br>
+	<form action="/ProjectJava/RegistServlet" method="post">
+		ISBN番号<input type="text" name="number"><br> 
+		値段<input type="text" name="price"><br>
 		<%--状態もプルダウンの方がいいのか（新品、未使用、使用済み等）--%>
 		状態<select name="example">
-			<option value="選択肢1">新品</option>
-			<option value="選択肢2">未使用</option>
-			<option value="選択肢3">中古</option>
+			<option value="新品">新品</option>
+			<option value="未使用">未使用</option>
+			<option value="中古">中古</option>
 		</select> <br>
-		<button onclick="location.href=''">戻る</button>
+		備考<input type="text" name="remarks"><br>
+		
+		<input type="submit" value="登録確認">
+		<input type="hidden" name="action" value=listing> <br>
 	</form>
+	<button onclick="location.href='usertop.jsp'">戻る</button>
 </body>
 </html>

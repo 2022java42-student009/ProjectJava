@@ -67,5 +67,38 @@ public class RegistDAO {
 	// ISBMでソートされたデータ
 
 	// 会員ようデータ料金変更
+	
+	//出品
+	public void listingRegist(int book_number,String state,int price,String remarks,int userid) throws DAOException{
+		String sql="insert into stock(book_number,stock_state,price,remarks) values (?,?,?,?)";
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1,book_number);
+			st.setString(2, state);
+			st.setInt(3, price);
+			st.setString(4, remarks);
+			
+			st.executeUpdate();
+		}catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		
+		String sql_2="insert into regist values (?,?,current_timestamp,?,?)";
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql_2);) {
+			st.setInt(1, userid);
+			st.setInt(2,book_number);
+			st.setInt(3, price);
+			st.setString(4, remarks);
+			
+			st.executeUpdate();
+		}catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 
 }
