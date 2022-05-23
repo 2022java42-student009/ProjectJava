@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import la.bean.BookBean;
 import la.bean.BuyBean;
+import la.bean.StockBean;
 
 public class BuyDAO {
 	String url = "jdbc:postgresql:projectjava";
@@ -44,8 +46,9 @@ public class BuyDAO {
 				String title = rs.getString("titke");
 				int category = rs.getInt("category");
 				String author = rs.getString("author");
-				
-				list.add();
+				StockBean sbean = new StockBean(id, BookBean book,state,price,remarks);
+				BuyBean bbean = new BuyBean(userid,book, selesday, price, remarks);
+				list.add(bean);
 			}
 			return list;
 		} catch (SQLException e) {
