@@ -36,7 +36,7 @@
 	</table>
 	
 	<br>
-	<button onclick="location.href=''">戻る</button>
+	<button onclick="location.href='usertop.jsp'">戻る</button>
 
 </body>
 </html>
