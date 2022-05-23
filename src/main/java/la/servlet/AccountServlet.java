@@ -62,7 +62,7 @@ public class AccountServlet extends HttpServlet {
 		} else if (action.equals("registercheck")) {
 			String name = request.getParameter("username");
 			String address = request.getParameter("address");
-			int tel = Integer.parseInt(request.getParameter("tel"));
+			String tel = request.getParameter("tel");
 			String mail = request.getParameter("mail");
 			String birthday = request.getParameter("birthday");
 			String password = request.getParameter("password");
@@ -76,6 +76,7 @@ public class AccountServlet extends HttpServlet {
 			try {
 				AccountDAO dao = new AccountDAO();
 				dao.memberRegister(bean);
+				gotoPage(request, response, "registerend.jsp");
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
