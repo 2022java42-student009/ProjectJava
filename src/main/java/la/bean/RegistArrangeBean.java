@@ -8,17 +8,17 @@ public class RegistArrangeBean{
 	private String author;
 	private String categoryname;
 	private Timestamp registday;
-	private int prise;
+	private int price;
 	private String remarks;
 	
-	public RegistArrangeBean(int book, String title, String author, String categoryname, Timestamp registday, int prise,
+	public RegistArrangeBean(int book, String title, String author, String categoryname, Timestamp registday, int price,
 			String remarks) {
 		this.book = book;
 		this.title = title;
 		this.author = author;
 		this.categoryname = categoryname;
 		this.registday = registday;
-		this.prise = prise;
+		this.price = price;
 		this.remarks = remarks;
 	}
 
@@ -62,12 +62,12 @@ public class RegistArrangeBean{
 		this.registday = registday;
 	}
 
-	public int getPrise() {
-		return prise;
+	public int getprice() {
+		return price;
 	}
 
-	public void setPrise(int prise) {
-		this.prise = prise;
+	public void setprice(int price) {
+		this.price = price;
 	}
 
 	public String getRemarks() {

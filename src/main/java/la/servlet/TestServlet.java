@@ -9,14 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import la.dao.AccountDAO;
+//import la.dao.AccountDAO;
 import la.dao.DAOException;
+import la.dao.RegistDAO;
 
 
 @WebServlet("/TestServlet")
 public class TestServlet extends HttpServlet {
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String action = request.getParameter("action");
 		if (action.equals("adminlogin")) {
@@ -32,6 +33,26 @@ public class TestServlet extends HttpServlet {
 					request.setAttribute("errmsg", "メールアドレスかパスワードが間違えています");
 					gotoPage(request, response, "/Testerr.jsp");
 				}
+			} catch (DAOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+			
+			
+		} 
+	}
+	*/
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String action = request.getParameter("action");
+		if (action.equals("Registcheck")) {
+			int userid = 2;
+			try {
+				RegistDAO dao = new RegistDAO();
+				request.setAttribute("Regist", dao.findAllRegist(userid));
+				gotoPage(request, response, "/TestRegist.jsp");
+
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
