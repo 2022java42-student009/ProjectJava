@@ -1,7 +1,6 @@
 package la.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,8 +30,8 @@ public class BookSerchServlet extends HttpServlet {
 
 			try {
 				BookDAO dao = new BookDAO();
-				List<BookBean> books = dao.findBookByIsbm(isbn);
-				request.setAttribute("books", books);
+				BookBean book = dao.findBookByIsbm(isbn);
+				request.setAttribute("book", book);
 				gotoPage(request, response, "adminbooksearch.jsp");
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック

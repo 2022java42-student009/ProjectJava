@@ -113,15 +113,15 @@ public class BookDAO {
 	
 	
 	//ISBMから本検索
-	public List<BookBean> findBookByIsbm(int isbmnumber) throws DAOException{
+	public BookBean findBookByIsbm(int isbmnumber) throws DAOException{
 		String sql = "SELECT book_number,book_title,c.category_id,c.category_name ,author FROM book INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE book_number = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setInt(1, isbmnumber);
 			try (ResultSet rs = st.executeQuery();) {
-				List<BookBean> list = new ArrayList<BookBean>();
-				while (rs.next()) {
+				
+				if (rs.next()) {
 					int isbm = rs.getInt("book_number");
 					String title = rs.getString("book_title");
 					int categoryid = rs.getInt("category_id");
@@ -129,9 +129,9 @@ public class BookDAO {
 					String author = rs.getString("author");
 
 					BookBean bean = new BookBean(isbm, title, categoryid,categoryname, author);
-					list.add(bean);
+					return bean;
 				}
-				return list;
+				return null;
 			} catch (SQLException e) {
 				// TODO: handle exception
 				e.printStackTrace();
