@@ -30,7 +30,7 @@ public class BookDAO {
 
 //	全ての本を取得
 	public List<BookBean> findAllBook() throws DAOException {
-		String sql = "SELECT * FROM book";
+		String sql = "SELECT book_number,book_title,c.category_id,c.category_name ,author FROM book INNER JOIN bookcategory c ON book.category_id = c.category_id;";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
@@ -39,10 +39,11 @@ public class BookDAO {
 			while (rs.next()) {
 				int isbm = rs.getInt("book_number");
 				String title = rs.getString("book_title");
-				int category = rs.getInt("category_id");
+				int categoryid = rs.getInt("category_id");
+				String categoryname = rs.getString("categoryname");
 				String author = rs.getString("author");
 
-				BookBean bean = new BookBean(isbm, title, category, author);
+				BookBean bean = new BookBean(isbm, title, categoryid,categoryname, author);
 				list.add(bean);
 			}
 			return list;
@@ -109,9 +110,12 @@ public class BookDAO {
 		
 	}*/
 	
+
+	
+	
 	//ISBMから本検索
 	public List<BookBean> findBookByIsbm(int isbmnumber) throws DAOException{
-		String sql = "SELECT * FROM book WHERE book_number = ?";
+		String sql = "SELECT book_number,book_title,c.category_id,c.category_name ,author FROM book INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE book_number = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -121,10 +125,11 @@ public class BookDAO {
 				while (rs.next()) {
 					int isbm = rs.getInt("book_number");
 					String title = rs.getString("book_title");
-					int category = rs.getInt("category_id");
+					int categoryid = rs.getInt("category_id");
+					String categoryname = rs.getString("categoryname");
 					String author = rs.getString("author");
 
-					BookBean bean = new BookBean(isbm, title, category, author);
+					BookBean bean = new BookBean(isbm, title, categoryid,categoryname, author);
 					list.add(bean);
 				}
 				return list;
@@ -142,7 +147,7 @@ public class BookDAO {
 	
 	//ISBMから在庫検索
 	public List<StockBean> findStockByIsbm(int booknumber) throws DAOException{
-		String sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE book.book_number = ?";
+		String sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE book.book_number = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -153,13 +158,14 @@ public class BookDAO {
 					int stockid = rs.getInt("stock_id");
 					int isbm = rs.getInt("book_number");
 					String title = rs.getString("book_title");
-					int category = rs.getInt("category_id");
+					int categoryid = rs.getInt("category_id");
+					String categoryname = rs.getString("categoryname");
 					String author = rs.getString("author");
 					String state = rs.getString("stock_state");
 					int price = rs.getInt("price");
 					String remarks = rs.getString("remarks");
 
-					BookBean book = new BookBean(isbm, title, category, author);
+					BookBean book = new BookBean(isbm, title, categoryid,categoryname, author);
 					StockBean stock = new StockBean(stockid, book, state, price, remarks);
 					list.add(stock);
 				}
@@ -178,7 +184,7 @@ public class BookDAO {
 	
 	//タイトルから在庫検索
 	public List<StockBean> findStockByTitle(String booktitle) throws DAOException{
-		String sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE book.book_title LIKE ?";
+		String sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE book.book_title LIKE ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -189,13 +195,14 @@ public class BookDAO {
 					int stockid = rs.getInt("stock_id");
 					int isbm = rs.getInt("book_number");
 					String title = rs.getString("book_title");
-					int category = rs.getInt("category_id");
+					int categoryid = rs.getInt("category_id");
+					String categoryname = rs.getString("categoryname");
 					String author = rs.getString("author");
 					String state = rs.getString("stock_state");
 					int price = rs.getInt("price");
 					String remarks = rs.getString("remarks");
 
-					BookBean book = new BookBean(isbm, title, category, author);
+					BookBean book = new BookBean(isbm, title, categoryid,categoryname, author);
 					StockBean stock = new StockBean(stockid, book, state, price, remarks);
 					list.add(stock);
 				}
@@ -218,19 +225,19 @@ public class BookDAO {
 		String sql;
 		switch (rangeid) {
 		case 0:
-			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price BETWEEN 0 AND 1000";
+			sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE price BETWEEN 0 AND 1000";
 			break;
 		case 1:
-			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price BETWEEN 1001 AND 5000 ";
+			sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE price BETWEEN 1001 AND 5000 ";
 			break;
 		case 2:
-			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price BETWEEN 5001 AND 10000 ";
+			sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE price BETWEEN 5001 AND 10000 ";
 			break;
 		case 3:
-			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number WHERE price > 10000 ";
+			sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id WHERE price > 10000 ";
 			break;
 		default:
-			sql = "SELECT stock_id,book.book_number,book.book_title,book.category_id,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number";
+			sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id";
 			break;
 		}
 		
@@ -242,13 +249,14 @@ public class BookDAO {
 				int stockid = rs.getInt("stock_id");
 				int isbm = rs.getInt("book_number");
 				String title = rs.getString("book_title");
-				int category = rs.getInt("category_id");
+				int categoryid = rs.getInt("category_id");
+				String categoryname = rs.getString("categoryname");
 				String author = rs.getString("author");
 				String state = rs.getString("stock_state");
 				int price = rs.getInt("price");
 				String remarks = rs.getString("remarks");
 
-				BookBean book = new BookBean(isbm, title, category, author);
+				BookBean book = new BookBean(isbm, title, categoryid,categoryname, author);
 				StockBean stock = new StockBean(stockid, book, state, price, remarks);
 				list.add(stock);
 			}
