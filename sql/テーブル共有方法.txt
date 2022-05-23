@@ -1,1 +1,34 @@
-FROM buy b JOIN stock s ON t1.hoge = stock s JOIN book bo ON stock s = book bo
+この.txtがあるフォルダ内で「Alt+Shift+右クリック」してください
+↓
+「cmd」と入力しEnter
+↓
+「psql -U postgres」でアカウントログインしてください
+（PW himitu）
+↓
+新規のデータベースを作成します。
+「create database projectjava」と入力しデータベースを作成します
+↓
+作成したデータベースに移動します
+「\c projectjava」の入力し実行してください
+↓
+データベース内にテーブルを作成します
+「\i createtable.txt」と入力し実行してください
+パワーシェルの操作は以上です
+
+A5M2の操作
+A5M2を起動しバーのデータベースから
+データベースの追加と削除を選択してください
+↓
+右下の追加を選択し
+項目から専用接続　オープンデータソースベースの
+PostgresSQL(直接接続)を選択
+↓
+データベース名を「projectjava」と入力し
+パスワードに「himitu」と入力してください
+
+以上でテーブルの共有は以上です
+テーブル内のデータは共有されないので注意してください
+
+update member
+set leave_day = current_timestamp, password = gen_random_uuid()
+where user_id = 3;
