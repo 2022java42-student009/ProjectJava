@@ -48,6 +48,7 @@ create table public.member (
 
 create table public.regist (
   user_id serial not null
+　, stock_id integer not null
   , book_number integer not null
   , regist_day timestamp(6) without time zone not null
   , price integer not null

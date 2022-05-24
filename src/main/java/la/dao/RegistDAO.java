@@ -64,9 +64,10 @@ public class RegistDAO {
 		}
 	}
 
-	// ISBMでソートされたデータ
+	
 
 	// 会員ようデータ料金変更
+	
 	
 	//出品
 	public void listingRegist(int book_number,String state,int price,String remarks,int userid) throws DAOException{
