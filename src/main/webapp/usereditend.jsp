@@ -9,6 +9,6 @@
 <body>
 	<h1>変更が完了しました</h1>
 	<br>
-	<button onclick="location.href=''">トップに戻る</button>
+	<button onclick="location.href='usertop'">トップに戻る</button>
 </body>
 </html>
