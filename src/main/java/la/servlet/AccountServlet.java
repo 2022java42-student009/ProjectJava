@@ -121,22 +121,23 @@ public class AccountServlet extends HttpServlet {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
-
+			
+//退会機能担当豊住
 		} else if (action.equals("end")) {
-
-			// ユーザ情報変更（仮） 豊住川瀬担当
 			try {
 				AccountDAO dao = new AccountDAO();
-				MemberBean endmember = (MemberBean) session.getAttribute("endmember");
-//				MemberBean member = (MemberBean) session.getAttribute("member");
-//				int userid = member.getId();
+//				int code = Integer.parseInt(request.getParameter("code"));
+				
+				MemberBean member = (MemberBean) session.getAttribute("member");
+				int userid = member.getId();
+				dao.memberDelete(userid);
 //
 //				MemberBean editmember = (MemberBean) session.getAttribute("editmember");
 //
 //				dao.useredit(editmember.getName(), editmember.getAddress(), editmember.getTel(), editmember.getMail(),
 //						editmember.getPassword(), userid);
 				
-				gotoPage(request, response, "userend.jsp");
+				gotoPage(request, response, "accountdeleteend.jsp");
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
