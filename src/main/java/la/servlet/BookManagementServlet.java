@@ -83,7 +83,7 @@ public class BookManagementServlet extends HttpServlet {
 
 			try {
 				BookDAO dao = new BookDAO();
-				dao.BookEdit(book,isbn);
+				dao.bookEdit(book,isbn);
 				
 				gotoPage(request, response, "bookmanagementend.jsp");
 			} catch (DAOException e) {
@@ -93,20 +93,18 @@ public class BookManagementServlet extends HttpServlet {
 
 		} else if (action.equals("deletecheck")) {
 			
-			int isbn = Integer.parseInt(request.getParameter("number"));
-			session.setAttribute("isbn", isbn);
 			
 			gotoPage(request, response, "bookdeletecheck.jsp");
 
 
 		} else if (action.equals("deletecheckend")) {
 			
-			int isbn = (int) session.getAttribute("isbn");
+			int isbn = (int) session.getAttribute("beforeisbn");
 			
 
 			try {
 				BookDAO dao = new BookDAO();
-				dao.BookDelete(isbn);
+				dao.bookDelete(isbn);
 				
 				gotoPage(request, response, "bookdeleteend.jsp");
 			} catch (DAOException e) {

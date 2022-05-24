@@ -144,7 +144,7 @@ public class BookDAO {
 		}
 	}
 
-	public void BookEdit(BookBean book,int isbn) throws DAOException {
+	public void bookEdit(BookBean book,int isbn) throws DAOException {
 		// TODO 自動生成されたメソッド・スタブ
 		String sql = "UPDATE book SET (book_number,book_title,category_id,author) = (?,?,?,?) WHERE book_number = ?";
 
@@ -165,7 +165,7 @@ public class BookDAO {
 		
 	}
 
-	public void BookDelete(int isbn) throws DAOException {
+	public void bookDelete(int isbn) throws DAOException {
 		// TODO 自動生成されたメソッド・スタブ
 		String sql = "DELETE FROM book WHERE book_number = ?";
 
