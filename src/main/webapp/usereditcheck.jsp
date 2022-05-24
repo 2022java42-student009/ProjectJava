@@ -11,12 +11,12 @@
 	変更してよろしいですか？
 	<br>
 	<form action="/ProjectJava/AccountServlet" method="post">
-		名前:${member.name}<br> 
-		住所:${member.address}<br>
-		電話番号:${member.tel}<br> 
-		メールアドレス:${member.mail}<br>
-		パスワード:${member.password}<br> 
-		<input type="hidden" name="action" value="register"> 
+		名前:${editmember.name}<br> 
+		住所:${editmember.address}<br>
+		電話番号:${editmember.tel}<br> 
+		メールアドレス:${editmember.mail}<br>
+		パスワード:${editmember.password}<br> 
+		<input type="hidden" name="action" value="edit"> 
 		<input type="submit" value="変更する">
 	</form>
 	<button onclick="location.href=''">キャンセル</button>

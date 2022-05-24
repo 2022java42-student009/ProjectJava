@@ -48,7 +48,7 @@ public class AccountServlet extends HttpServlet {
 			try {
 				AccountDAO dao = new AccountDAO();
 				if (dao.adminLoginCheck(mail, pass)) {
-					
+
 					session.setAttribute("admin", dao.findAdmin(mail));
 					session.setAttribute("loginstate", true);
 					gotoPage(request, response, "admintop.jsp");
@@ -70,12 +70,12 @@ public class AccountServlet extends HttpServlet {
 			String password = request.getParameter("password");
 
 			MemberBean bean = new MemberBean(name, address, tel, mail, birthday, password);
-			
+
 			session.setAttribute("member", bean);
 			gotoPage(request, response, "registercheck.jsp");
 
 		} else if (action.equals("register")) {
-			MemberBean bean =  (MemberBean) session.getAttribute("member");
+			MemberBean bean = (MemberBean) session.getAttribute("member");
 			try {
 				AccountDAO dao = new AccountDAO();
 				dao.memberRegister(bean);
@@ -84,32 +84,47 @@ public class AccountServlet extends HttpServlet {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
-			//ユーザ情報変更（仮） 豊住川瀬担当
+			// ユーザ情報変更（仮） 豊住川瀬担当
 		} else if (action.equals("useredit")) {
+
+			String name = request.getParameter("name");
+			String address = request.getParameter("address");
+			String tel = request.getParameter("tel");
+			String mail = request.getParameter("mail");
+			String password = request.getParameter("password");
+			MemberBean member = new MemberBean();
+			member.setName(name);
+			member.setAddress(address);
+			member.setTel(tel);
+			member.setMail(mail);
+			member.setPassword(password);
+
+			session.setAttribute("editmember", member);
+
+			gotoPage(request, response, "usereditcheck.jsp");
+
+		} else if (action.equals("edit")) {
+
+			// ユーザ情報変更（仮） 豊住川瀬担当
 			try {
-				System.out.println("good1");
 				AccountDAO dao = new AccountDAO();
-				String name = request.getParameter("name");
-				String address = request.getParameter("address");
-				String tel = request.getParameter("tel");
-				String mail = request.getParameter("mail");
-				String password = request.getParameter("password");
 				MemberBean member = (MemberBean) session.getAttribute("member");
 				int userid = member.getId();
-				dao.useredit(name,address,tel,mail,password,userid);
+
+				MemberBean editmember = (MemberBean) session.getAttribute("editmember");
+
+				dao.useredit(editmember.getName(), editmember.getAddress(), editmember.getTel(), editmember.getMail(),
+						editmember.getPassword(), userid);
 				
-				gotoPage(request, response, "usereditcheck.jsp");
+				gotoPage(request, response, "usereditend.jsp");
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
-				System.out.println("error1");
 				e.printStackTrace();
-				gotoPage(request,response,"/errInternal");
 			}
-			
+
 		}
 
 	}
-	
 
 	private void gotoPage(HttpServletRequest request, HttpServletResponse response, String page)
 			throws ServletException, IOException {
