@@ -16,7 +16,7 @@
 		電話番号:${editmember.tel}<br> 
 		メールアドレス:${editmember.mail}<br>
 		パスワード:${editmember.password}<br> 
-		<input type="hidden" name="action" value="edit"> 
+		<input type="hidden" name="action" value="end"> 
 		<input type="submit" value="変更する">
 	</form>
 	<button onclick="location.href=''">キャンセル</button>
