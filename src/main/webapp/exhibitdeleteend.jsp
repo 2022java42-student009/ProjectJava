@@ -7,6 +7,7 @@
 <title>exhibitdeleteend</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 削除を完了しました<br>
 <%--トップに戻るボタンが画面レイアウト設計書には記載がありません--%>
 <button onclick="location.href='usertop.jsp'">トップページに戻る</button>

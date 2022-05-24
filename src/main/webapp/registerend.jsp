@@ -7,6 +7,7 @@
 <title>registerend</title>
 </head>
 <body>
+<jsp:include page="/indexheader.jsp"/>
 	会員登録が完了しました
 	<br>
 	<button onclick="location.href='userlogin.jsp'">ログイン</button><br>

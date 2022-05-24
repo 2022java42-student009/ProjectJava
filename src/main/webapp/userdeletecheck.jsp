@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	本当に削除してよろしいですか？
 	<br>
 	<form action="/ProjectJava/AccountManagementServlet?action=deletecheckend" method="post">

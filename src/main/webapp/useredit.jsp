@@ -7,6 +7,7 @@
 <title>useredit</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 <h1 style="text-align: center">会員情報変更画面</h1>
 <form action="/ProjectJava/AccountServlet" method="post">
 	名前<input type="text" name="name" value="${member.name }"><br>

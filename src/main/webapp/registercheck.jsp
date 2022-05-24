@@ -7,6 +7,7 @@
 <title>registercheck</title>
 </head>
 <body>
+<jsp:include page="/indexheader.jsp"/>
 以下の内容で登録してよいか確認してください<br>
 
 

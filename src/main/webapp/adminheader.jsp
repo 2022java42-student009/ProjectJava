@@ -13,7 +13,7 @@
     justify-content: space-between;
     height: 50px;
     padding: 15px;
-    background: #ffe4b5;
+    background: #f0f8ff;
     align-items: center;
     
 }
@@ -26,9 +26,9 @@ header a{
  </style>
  <header>
  
-<a href="usertop.jsp"><h1 class="logo">TextOff</h1></a>
+<a href="admintop.jsp"><h1 class="logo">TextOff</h1></a>
 <c:if test="${loginstate}">
-	<p>${member.name }さんでログインしています</p>
+	<p>${admin.name }さんでログインしています</p>
 </c:if>
 
 </header>

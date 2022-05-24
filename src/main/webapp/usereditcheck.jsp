@@ -7,6 +7,7 @@
 <title>usereditcheck</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	<%--画面レイアウト設計書には以下の文の記載はないですが、追加したほうが良いかと思います。 --%>
 	変更してよろしいですか？
 	<br>

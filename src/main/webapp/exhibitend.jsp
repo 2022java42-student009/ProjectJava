@@ -7,6 +7,7 @@
 <title>exhibitend</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	出品が完了しました
 	<br>
 	<button onclick="location.href='usertop.jsp'">トップに戻る</button>

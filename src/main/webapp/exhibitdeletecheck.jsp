@@ -7,6 +7,7 @@
 <title>exhibitdeletecheck</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 本当に削除してよろしいですか？<br>
 	
 	<button onclick="location.href='/ProjectJava/RegistServlet?action=deletelist'">削除する</button>

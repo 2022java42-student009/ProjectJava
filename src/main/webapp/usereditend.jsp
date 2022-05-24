@@ -7,6 +7,7 @@
 <title>usereditend</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	<h1>変更が完了しました</h1>
 	<br>
 	<button onclick="location.href='usertop.jsp'">トップに戻る</button>

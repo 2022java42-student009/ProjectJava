@@ -8,6 +8,7 @@
 <title>exhibiteditcheck</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	<form action="/ProjectJava/RegistServlet" method="post">
 		以下の情報で登録します。よろしいですか？
 		<br>

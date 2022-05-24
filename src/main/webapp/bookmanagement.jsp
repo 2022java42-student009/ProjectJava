@@ -8,6 +8,7 @@
 <title>bookmanagement</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	<h1>教科書更新画面</h1>
 	<form action="?" method="post">
 		ISBN <input type="text" name="number" value="${book.isbm }"> <br>

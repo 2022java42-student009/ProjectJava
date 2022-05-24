@@ -7,6 +7,7 @@
 <title>buycheck</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 この教科書を購入します。よろしいですか？<br>
 <form action="/ProjectJava/BuyServlet?action=buyend" method="post">
 	ISBN ${stock.id }<br>

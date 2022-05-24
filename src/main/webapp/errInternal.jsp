@@ -7,6 +7,7 @@
 <title>Error</title>
 </head>
 <body>
+<jsp:include page="/indexheader.jsp"/>
 <h1>${mssage}</h1>
 </body>
 </html>

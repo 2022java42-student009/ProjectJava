@@ -7,7 +7,7 @@
 <title>bookdeleteend</title>
 </head>
 <body>
-
+<jsp:include page="/adminheader.jsp"/>
 	<h1>削除を完了しました</h1>
 	<br>
 	<button onclick="location.href='admintop.jsp'">トップに戻る</button>

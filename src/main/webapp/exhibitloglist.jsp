@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	出品履歴一覧
 	
 		<table border="1">

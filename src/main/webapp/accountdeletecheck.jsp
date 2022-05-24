@@ -7,6 +7,7 @@
 <title>accountdeletecheck</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	退会しますがよろしいですか？
 	<br>
 	<form action="/ProjectJava/AccountServlet" method="post">

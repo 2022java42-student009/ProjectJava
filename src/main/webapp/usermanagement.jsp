@@ -7,6 +7,7 @@
 <title>usermanagement</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	<form action="?" method="post">
 		会員ID<input type ="text" name ="userid" value="${user.id }"><br>
 		名前<input type ="text" name ="username" value="${user.name }"><br>

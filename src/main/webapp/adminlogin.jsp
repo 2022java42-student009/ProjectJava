@@ -8,7 +8,7 @@
 <title>adminlogin</title>
 </head>
 <body>
-
+<jsp:include page="/indexheader.jsp"/>
 
 	<h2 style="text-align: center">管理者ログイン</h2>
 	<br>

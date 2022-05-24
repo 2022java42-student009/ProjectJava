@@ -7,6 +7,7 @@
 <title>exhibit</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	教科書登録
 	<form action="/ProjectJava/RegistServlet" method="post">
 		ISBN番号<input type="text" name="number"><br> 

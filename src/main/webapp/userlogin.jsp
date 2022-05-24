@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/indexheader.jsp"/>
 	<form action="/ProjectJava/AccountServlet" method="post">
 		<h3>ログイン</h3>
 		メールアドレス <input type="email" name="email"> <br> パスワード <input

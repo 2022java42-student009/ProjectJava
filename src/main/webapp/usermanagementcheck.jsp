@@ -7,6 +7,7 @@
 <title>usermanagementcheck</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	以下の内容で変更してよいか確認してください。
 	<br>
 

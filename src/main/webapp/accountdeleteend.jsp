@@ -7,7 +7,7 @@
 <title>accountdeleteend</title>
 </head>
 <body>
-
+<jsp:include page="/userheader.jsp"/>
 <button onclick="location.href=''">退会しました</button>
 
 </body>

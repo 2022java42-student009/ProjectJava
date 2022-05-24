@@ -7,6 +7,7 @@
 <title>bookdeletecheck</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	本当に削除してよろしいですか？
 	<br>
 	<form action="/ProjectJava/BookManagementServlet?action=deletecheckend" method="post">

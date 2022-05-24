@@ -8,6 +8,7 @@
 <title>adminbookserch</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	<h2>#教科書管理</h2>
 
 

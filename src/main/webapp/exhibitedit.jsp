@@ -8,6 +8,7 @@
 <title>exhibitedit</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	出品情報編集画面<br>
 	<c:forEach items="${singlelist}" var="list">
 	

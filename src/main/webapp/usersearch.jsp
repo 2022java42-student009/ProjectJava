@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 	<h2>#ユーザ管理</h2>
 	<form action="/ProjectJava/AccountManagementServlet?action=usersearch" method="post">
 	<br>

@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 	<h2>購入が完了しました</h2>
 	<button onclick="location.href=''">トップに戻る</button>
 </body>

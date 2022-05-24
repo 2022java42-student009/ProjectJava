@@ -7,6 +7,7 @@
 <title>bookmanagementend</title>
 </head>
 <body>
+<jsp:include page="/adminheader.jsp"/>
 <h1>変更が完了しました</h1><br>
 	<button onclick="location.href=''">トップに戻る</button>
 

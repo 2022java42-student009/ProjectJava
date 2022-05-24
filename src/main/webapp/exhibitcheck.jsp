@@ -7,6 +7,7 @@
 <title>exhibitcheck</title>
 </head>
 <body>
+<jsp:include page="/userheader.jsp"/>
 		以下の情報で登録します。よろしいですか？ <br>
 	<form action="/ProjectJava/RegistServlet" method="post">
 		ISBM番号:${listingdata.book.isbm}<br>
