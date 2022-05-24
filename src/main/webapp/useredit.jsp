@@ -20,9 +20,9 @@
 	<br> パスワード
 	<input type="password" name="pass">
 	<br>
-	<button onclick="location.href=''">退会</button>
 	<input type="submit" value="確認">
 </form>
 <button onclick="location.href='usertop.jsp'">キャンセル</button>
+<br><br><button onclick="location.href='accountdeletecheck.jsp'">退会</button>
 </body>
 </html>
