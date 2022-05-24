@@ -14,7 +14,9 @@
   	電話番号<input type="tel" name="tel"><br> 
   	メールアドレス<input type="email" name="mail"><br> 
   	パスワード<input type="password" name="password"><br>
+  	<input type="hidden" name="action" value="useredit">
 	<input type="submit" value="確認">
+	
 </form>
 <button onclick="location.href='usertop.jsp'">キャンセル</button>
 <br><br><button onclick="location.href='accountdeletecheck.jsp'">退会</button>

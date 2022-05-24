@@ -254,7 +254,7 @@ public class AccountDAO {
 	// 会員登録変更(ログインユーザ)
 	public int useredit(String name, String address,String tel,String mail, String password,int userid) throws DAOException {
 
-		String sql = "UPDATE member SET user_name='?', address='?', tel='?', mail='?', password='?' WHERE user_id = ?";
+		String sql = "UPDATE member SET user_name=?, address=?, tel=?, mail=?, password=? WHERE user_id = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {

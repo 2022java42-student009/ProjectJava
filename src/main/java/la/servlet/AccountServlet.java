@@ -87,6 +87,7 @@ public class AccountServlet extends HttpServlet {
 			//ユーザ情報変更（仮） 豊住川瀬担当
 		} else if (action.equals("useredit")) {
 			try {
+				System.out.println("good1");
 				AccountDAO dao = new AccountDAO();
 				String name = request.getParameter("name");
 				String address = request.getParameter("address");
@@ -96,13 +97,14 @@ public class AccountServlet extends HttpServlet {
 				MemberBean member = (MemberBean) session.getAttribute("member");
 				int userid = member.getId();
 				dao.useredit(name,address,tel,mail,password,userid);
+				
+				gotoPage(request, response, "usereditcheck.jsp");
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
+				System.out.println("error1");
 				e.printStackTrace();
+				gotoPage(request,response,"/errInternal");
 			}
-			
-			
-		
 			
 		}
 
