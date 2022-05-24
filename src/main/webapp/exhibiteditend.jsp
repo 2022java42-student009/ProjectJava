@@ -8,6 +8,6 @@
 </head>
 <body>
 出品が完了しました<br>
-<button onclick="location.href=''">トップページに戻る</button>
+<button onclick="location.href='usertop.jsp'">トップページに戻る</button>
 </body>
 </html>
