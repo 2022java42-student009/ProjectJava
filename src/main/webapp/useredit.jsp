@@ -22,7 +22,7 @@
 	<br>
 	<button onclick="location.href=''">退会</button>
 	<input type="submit" value="確認">
-	<button onclick="location.href=''">キャンセル</button>
 </form>
+<button onclick="location.href='usertop.jsp'">キャンセル</button>
 </body>
 </html>

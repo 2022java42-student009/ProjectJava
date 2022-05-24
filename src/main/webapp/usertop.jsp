@@ -18,8 +18,10 @@
 	</form>
 	<button onclick="location.href='/ProjectJava/BuyServlet?action=registlist'">購入履歴一覧</button>
 	<br>
-	<button onclick="location.href=''">アカウント情報編集</button>
+	<button onclick="location.href='useredit.jsp'">アカウント情報編集</button>
 	<br>
+	<br>
+	<button onclick="location.href='index.jsp'">ログアウト</button>
 
 </body>
 </html>
