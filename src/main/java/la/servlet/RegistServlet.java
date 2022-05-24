@@ -71,6 +71,23 @@ public class RegistServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
+		}else if(action.equals("deletecheck")) {
+				int listnumber = Integer.parseInt(request.getParameter("listnumber"));
+				session.setAttribute("delete", listnumber);
+				System.out.println(listnumber);
+				
+				gotoPage(request, response, "/exhibitdeletecheck.jsp");
+			
+		}else if(action.equals("deletelist")) {
+			try {
+				int number = (int)session.getAttribute("delete");
+				RegistDAO dao = new RegistDAO();
+				dao.deleteRegist(number);
+		
+				gotoPage(request, response, "/exhibitdeleteend.jsp");
+			} catch (DAOException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}

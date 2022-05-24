@@ -31,7 +31,10 @@
 				<td align="right">${regist.registday}</td>
 				<td align="right">${regist.price}</td>
 				<td align="right">${regist.remarks}</td>
-				<td align="right"><button>編集</button><button>削除</button></td>
+				<td align="right">${regist.stock_id}</td>
+				<td align="right">
+				<button >編集</button>
+				<button onclick="location.href='/ProjectJava/RegistServlet?action=deletecheck&listnumber=${regist.stock_id}'">削除</button></td>
 				
 			</tr>
 

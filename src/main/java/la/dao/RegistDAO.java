@@ -29,7 +29,7 @@ public class RegistDAO {
 
 	// 登録された本全データ
 	public List<RegistArrangeBean> findAllRegist(int userid) throws DAOException {
-		String sql = "select book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,price,remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id WHERE user_id = ?";
+		String sql = "select stock.stock_id,book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,regist.price,regist.remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id INNER JOIN stock ON stock.stock_id = regist.stock_id WHERE user_id = ?;";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -38,6 +38,7 @@ public class RegistDAO {
 			try (ResultSet rs = st.executeQuery();) {
 				List<RegistArrangeBean> list = new ArrayList<RegistArrangeBean>();
 				while (rs.next()) {
+					int stockid = rs.getInt("stock_id");
 					int book = rs.getInt("book_number");
 					String title = rs.getString("book_title");
 					String author = rs.getString("author");
@@ -47,7 +48,7 @@ public class RegistDAO {
 					String remarks = rs.getString("remarks");
 
 					// 使用テーブル レジスト ブック ブックカテゴリー
-					RegistArrangeBean bean = new RegistArrangeBean(book, title, author, categoryname, registday, prise,remarks);
+					RegistArrangeBean bean = new RegistArrangeBean(stockid,book, title, author, categoryname, registday, prise,remarks);
 					list.add(bean);
 				}
 				return list;
@@ -66,10 +67,40 @@ public class RegistDAO {
 
 	
 
-	// 会員ようデータ料金変更
+	// 会員用出品本データ削除
+	public void deleteRegist(int stock_id) throws DAOException{
+		String sql = "DELETE FROM regist WHERE stock_id = ?";
+		
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, stock_id);
+			
+			st.executeUpdate();
+		}catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		
+		
+		String sql2 = "DELETE FROM stock WHERE stock_id = ?";
+		
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql2);) {
+			st.setInt(1, stock_id);
+			
+			st.executeUpdate();
+		}catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		
+	}
 	
 	
-	//出品
+	
+	//出品システム
 	public void listingRegist(int book_number,String state,int price,String remarks,int userid) throws DAOException{
 		String sql="insert into stock(book_number,stock_state,price,remarks) values (?,?,?,?)";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
