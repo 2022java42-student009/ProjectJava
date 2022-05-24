@@ -25,6 +25,6 @@
 		
 	</form>
 	
-	<button onclick="location.href=''">キャンセル</button>
+	<button onclick="location.href='adminbooksearch.jsp'">キャンセル</button>
 </body>
 </html>

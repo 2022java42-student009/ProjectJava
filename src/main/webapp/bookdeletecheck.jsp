@@ -12,6 +12,6 @@
 	<form action="/ProjectJava/BookManagementServlet?action=deletecheckend" method="post">
 		<input type="submit" value="削除">
 	</form>
-	<button onclick="location.href=''">キャンセル</button>
+	<button onclick="location.href='bookmanagement.jsp'">キャンセル</button>
 </body>
 </html>

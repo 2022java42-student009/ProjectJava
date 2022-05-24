@@ -19,7 +19,7 @@
 		
 		<input type="submit" value="確定">
 	</form>
-	<button onclick="location.href=''">修正</button>
+	<button onclick="location.href='bookmanagement.jsp'">修正</button>
 	
 </body>
 </html>
