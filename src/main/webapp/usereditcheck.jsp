@@ -19,6 +19,6 @@
 		<input type="hidden" name="action" value="edit"> 
 		<input type="submit" value="変更する">
 	</form>
-	<button onclick="location.href=''">キャンセル</button>
+	<button onclick="location.href='useredit.jsp'">キャンセル</button>
 </body>
 </html>
