@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-本当に削除してよろしいですか？<br>
-	<input type="submit" value="削除">
+	本当に削除してよろしいですか？
+	<br>
+	<form action="/ProjectJava/AccountManagementServlet?action=deletecheckend" method="post">
+		<input type="submit" value="削除">
+	</form>
 	<button onclick="location.href=''">キャンセル</button>
 </body>
 </html>

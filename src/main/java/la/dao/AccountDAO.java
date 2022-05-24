@@ -228,7 +228,7 @@ public class AccountDAO {
 	}
 
 	// 会員登録
-//	public void memberRegister(MemberBean member) throws DAOException {
+
 	public void memberRegister(MemberBean member) throws DAOException {
 
 		String sql = "INSERT INTO member(user_name,address,tel,mail,birthday,admission_day,password) VALUES(?,?,?,?,?,current_timestamp,?)";
@@ -251,7 +251,7 @@ public class AccountDAO {
 
 	}
 
-	// 会員登録変更
+	// 会員登録変更(ログインユーザ)
 	public int useredit(String name, String address,String tel,String mail, String password,int userid) throws DAOException {
 
 		String sql = "UPDATE member SET user_name='?', address='?', tel='?', mail='?', password='?' WHERE user_id = ?";
@@ -280,21 +280,42 @@ public class AccountDAO {
 		}
 	}
 
-	// 会員退会
-	public void memberDelete(MemberBean member) throws DAOException {
+	// 会員退会(ログインユーザ)
+	public void memberDelete(int id) throws DAOException {
 
-		String sql = "UPDATE member SET leave_day = current_timestamp, pass = gen_random_uuid WHERE user_id = ? ";
+		String sql = "UPDATE member SET leave_day = current_timestamp, password = gen_random_uuid() WHERE user_id = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 
-			st.setInt(1, member.getId());
+			st.setInt(1, id);
 			st.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DAOException("レコードの操作に失敗しました。");
 		}
 
+	}
+
+	//管理者　会員アカウント管理
+	public void memberEdit(MemberBean member, int id) throws DAOException {
+		// TODO 自動生成されたメソッド・スタブ
+		String sql = "UPDATE member SET (user_id,user_name,password) = (?,?,?) WHERE user_id = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, member.getId());
+			st.setString(2, member.getName());
+			st.setString(3, member.getPassword());
+			st.setInt(4, id);
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		
 	}
 
 }

@@ -9,6 +9,6 @@
 <body>
 	<h1>削除を完了しました</h1>
 	<br>
-	<button onclick="location.href=''">トップに戻る</button>
+	<button onclick="location.href='admintop.jsp'">トップに戻る</button>
 </body>
 </html>

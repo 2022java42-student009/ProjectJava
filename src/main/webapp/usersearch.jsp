@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>#ユーザ管理</h2>
-	<form action="/ProjectJava/AccountServlet?action=usersearch" method="post">
+	<form action="/ProjectJava/AccountManagementServlet?action=usersearch" method="post">
 	<br>
 		会員IDで検索する:
 		<br>
@@ -23,7 +23,7 @@
 		${user.id }
 		${user.name }
 		
-		<button onclick="location.href='bookmanagementcheck.jsp'">編集</button>
+		<button onclick="location.href='/ProjectJava/AccountManagementServlet?action=edit&id=${user.id}'">編集</button>
 	</div>
 	</c:forEach>
 	

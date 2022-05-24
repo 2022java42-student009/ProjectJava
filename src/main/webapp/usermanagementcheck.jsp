@@ -7,10 +7,17 @@
 <title>usermanagementcheck</title>
 </head>
 <body>
-	<form action="" method="post">
-		以下の内容で変更してよいか確認してください。<br>
-		<button onclick="location.href=''">修正</button>
-		<input type = "submit" value ="確定">
+	以下の内容で変更してよいか確認してください。
+	<br>
+
+	<form action="/ProjectJava/AccountManagementServlet?action=editcheckend" method="post">
+		会員ID ${editmember.id }<br>
+		名前 ${editmember.name }<br>
+		パスワード ${editmember.password }<br>
+		
+		
+		<input type="submit" value="確定">
 	</form>
+	<button onclick="location.href='usermanagement.jsp'">修正</button>
 </body>
 </html>
