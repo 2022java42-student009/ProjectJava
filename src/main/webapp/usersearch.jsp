@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +9,23 @@
 </head>
 <body>
 	<h2>#ユーザ管理</h2>
-	<form action="" method="post">
+	<form action="/ProjectJava/AccountServlet?action=usersearch" method="post">
 	<br>
 		会員IDで検索する:
 		<br>
-		<input type="text"  name="" >
+		<input type="text"  name="id" >
 		<input type="submit" value="検索">
 	</form>
+	
+	<h2>検索結果</h2>
+	<c:forEach items="${users }" var="user">
+	<div class="items" style="border: 1px solid; margin: 10px auto; width">
+		${user.id }
+		${user.name }
+		
+		<button onclick="location.href='bookmanagementcheck.jsp'">編集</button>
+	</div>
+	</c:forEach>
+	
 </body>
 </html>

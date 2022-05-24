@@ -9,9 +9,9 @@
 <body>
 	本当に削除してよろしいですか？
 	<br>
-	<form action="" method="post">
+	<form action="/ProjectJava/BookManagementServlet?action=deletecheckend" method="post">
 		<input type="submit" value="削除">
-		<button onclick="location.href=''">キャンセル</button>
 	</form>
+	<button onclick="location.href='bookmanagement.jsp'">キャンセル</button>
 </body>
 </html>

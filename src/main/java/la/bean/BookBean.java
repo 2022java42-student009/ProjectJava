@@ -31,11 +31,11 @@ public class BookBean implements Serializable{
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getCategory() {
+	public int getCategoryid() {
 		return categoryid;
 	}
-	public void setCategory(int category) {
-		this.categoryid = category;
+	public void setCategory(int categoryid) {
+		this.categoryid = categoryid;
 	}
 	public String getAuthor() {
 		return author;

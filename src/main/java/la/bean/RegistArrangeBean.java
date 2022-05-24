@@ -3,6 +3,7 @@ package la.bean;
 import java.sql.Timestamp;
 
 public class RegistArrangeBean{
+	private int stock_id;
 	private int book;
 	private String title;
 	private String author;
@@ -11,8 +12,9 @@ public class RegistArrangeBean{
 	private int price;
 	private String remarks;
 	
-	public RegistArrangeBean(int book, String title, String author, String categoryname, Timestamp registday, int price,
-			String remarks) {
+	public RegistArrangeBean(int stock_id, int book, String title, String author, String categoryname,
+			Timestamp registday, int price, String remarks) {
+		this.stock_id = stock_id;
 		this.book = book;
 		this.title = title;
 		this.author = author;
@@ -20,6 +22,14 @@ public class RegistArrangeBean{
 		this.registday = registday;
 		this.price = price;
 		this.remarks = remarks;
+	}
+
+	public int getStock_id() {
+		return stock_id;
+	}
+
+	public void setStock_id(int stock_id) {
+		this.stock_id = stock_id;
 	}
 
 	public int getBook() {
@@ -62,11 +72,11 @@ public class RegistArrangeBean{
 		this.registday = registday;
 	}
 
-	public int getprice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setprice(int price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
@@ -78,6 +88,4 @@ public class RegistArrangeBean{
 		this.remarks = remarks;
 	}
 	
-	
 }
-

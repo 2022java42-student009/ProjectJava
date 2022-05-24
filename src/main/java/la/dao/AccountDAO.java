@@ -195,8 +195,8 @@ public class AccountDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 	}
-	
-	//会員全員取得
+
+	// 会員全員取得
 	public List<MemberBean> findAllMember() throws DAOException {
 		String sql = "SELECT * FROM member";
 
@@ -215,8 +215,8 @@ public class AccountDAO {
 				Timestamp leaveday = rs.getTimestamp("leave_day");
 				String password = rs.getString("password");
 
-				MemberBean bean = new MemberBean(userid, name, address, tel, email, birthday, admissionday,
-						leaveday, password);
+				MemberBean bean = new MemberBean(userid, name, address, tel, email, birthday, admissionday, leaveday,
+						password);
 				list.add(bean);
 			}
 			return list;
@@ -249,6 +249,35 @@ public class AccountDAO {
 			throw new DAOException("レコードの操作に失敗しました。");
 		}
 
+	}
+
+	// 会員登録変更
+	public int useredit(String name, String address,String tel,String mail, String password,int userid) throws DAOException {
+
+		String sql = "UPDATE member SET user_name='?', address='?', tel='?', mail='?', password='?' WHERE user_id = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+//			st.setString(1, member.getName());
+//			st.setString(2, member.getAddress());
+//			st.setString(3, member.getTel());
+//			st.setString(4, member.getMail());
+//			st.setString(5, member.getBirthday());
+//			st.setString(6, member.getPassword());
+		st.setString(1,name);
+		st.setString(2,address);
+		st.setString(3,tel);
+		st.setString(4,mail);
+		st.setString(5,password);
+		st.setInt(6,userid);
+		
+			int rows = st.executeUpdate();
+			return rows;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの操作に失敗しました。");
+		}
 	}
 
 	// 会員退会

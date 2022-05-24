@@ -9,6 +9,6 @@
 <body>
 削除を完了しました<br>
 <%--トップに戻るボタンが画面レイアウト設計書には記載がありません--%>
-<input type = "submit" value ="トップに戻る">
+<button onclick="location.href='usertop.jsp'">トップページに戻る</button>
 </body>
 </html>

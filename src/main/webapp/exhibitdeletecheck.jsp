@@ -8,7 +8,9 @@
 </head>
 <body>
 本当に削除してよろしいですか？<br>
-	<input type = "submit" value ="削除する">
-	<button onclick="location.href=''">キャンセル</button>
+	
+	<button onclick="location.href='/ProjectJava/RegistServlet?action=deletelist'">削除する</button>
+	
+	<button onclick="location.href='exhibitloglist.jsp'">キャンセル</button>
 </body>
 </html>

@@ -8,8 +8,8 @@
 </head>
 <body>
 	
-	<button onclick="location.href=''">教科書管理</button>
-	<button onclick="location.href=''">会員管理</button>
+	<button onclick="location.href='/ProjectJava/BookManagementServlet'">教科書管理</button>
+	<button onclick="location.href='usersearch.jsp'">会員管理</button>
 
 </body>
 </html>

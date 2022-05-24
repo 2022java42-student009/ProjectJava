@@ -143,6 +143,48 @@ public class BookDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 	}
+
+	public void BookEdit(BookBean book,int isbn) throws DAOException {
+		// TODO 自動生成されたメソッド・スタブ
+		String sql = "UPDATE book SET (book_number,book_title,category_id,author) = (?,?,?,?) WHERE book_number = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, book.getIsbm());
+			st.setString(2, book.getTitle());
+			st.setInt(3, book.getCategoryid());
+			st.setString(4, book.getAuthor());
+			st.setInt(5, isbn);
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		
+	}
+
+	public void BookDelete(int isbn) throws DAOException {
+		// TODO 自動生成されたメソッド・スタブ
+		String sql = "DELETE FROM book WHERE book_number = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, isbn);
+			
+			st.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
+
+	
+
+	
 	
 	
 	

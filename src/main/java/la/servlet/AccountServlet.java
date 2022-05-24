@@ -16,7 +16,7 @@ import la.dao.DAOException;
 
 @WebServlet("/AccountServlet")
 public class AccountServlet extends HttpServlet {
-
+//新規会員登録＆ログイン機能
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
@@ -84,9 +84,30 @@ public class AccountServlet extends HttpServlet {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
 			}
+			//ユーザ情報変更（仮） 豊住川瀬担当
+		} else if (action.equals("useredit")) {
+			try {
+				AccountDAO dao = new AccountDAO();
+				String name = request.getParameter("name");
+				String address = request.getParameter("address");
+				String tel = request.getParameter("tel");
+				String mail = request.getParameter("mail");
+				String password = request.getParameter("password");
+				MemberBean member = (MemberBean) session.getAttribute("member");
+				int userid = member.getId();
+				dao.useredit(name,address,tel,mail,password,userid);
+			} catch (DAOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+			
+			
+		
+			
 		}
 
 	}
+	
 
 	private void gotoPage(HttpServletRequest request, HttpServletResponse response, String page)
 			throws ServletException, IOException {
