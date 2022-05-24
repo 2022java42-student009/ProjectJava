@@ -8,10 +8,17 @@
 </head>
 <body>
 この教科書を購入します。よろしいですか？<br>
-<form action="" method="post">
-	<input type = "submit" value ="購入する">
-	<button onclick="location.href=''">いいえ</button>
-</form>
+<form action="/ProjectJava/BuyServlet?action=buyend" method="post">
+	ISBN ${stock.id }<br>
+	カテゴリー ${stock.book.categoryname }<br>
+	タイトル ${stock.book.title }<br>
+	著者名 ${stock.book.author }<br>
+	金額 ${stock.price }<br>
+	備考 ${stock.remarks }<br>
 
+	<input type = "submit" value ="購入する">
+	
+</form>
+<button onclick="location.href=''">いいえ</button>
 </body>
 </html>
