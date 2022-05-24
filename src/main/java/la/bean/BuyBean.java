@@ -4,15 +4,13 @@ import java.io.Serializable;
 
 public class BuyBean implements Serializable {
 	private int userid;
-	private StockBean book = new StockBean();
-	private int selesday;
+	private int stockid;
 	private int price;
 	private String remarks;
 	
-	public BuyBean(int userid, StockBean book, int selesday, int price, String remarks) {
+	public BuyBean(int userid, int stockid, int price, String remarks) {
 		this.userid = userid;
-		this.book = book;
-		this.selesday = selesday;
+		this.stockid = stockid;
 		this.price = price;
 		this.remarks = remarks;
 	}
@@ -29,20 +27,12 @@ public class BuyBean implements Serializable {
 		this.userid = userid;
 	}
 
-	public StockBean getBook() {
-		return book;
+	public int getStockid() {
+		return stockid;
 	}
 
-	public void setBook(StockBean book) {
-		this.book = book;
-	}
-
-	public int getSelesday() {
-		return selesday;
-	}
-
-	public void setSelesday(int selesday) {
-		this.selesday = selesday;
+	public void setStockid(int stockid) {
+		this.stockid = stockid;
 	}
 
 	public int getPrice() {

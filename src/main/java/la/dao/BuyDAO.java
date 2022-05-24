@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import la.bean.BuyArrangeBean;
+import la.bean.BuyBean;
 
 public class BuyDAO {
 	String url = "jdbc:postgresql:projectjava";
@@ -58,6 +59,44 @@ public class BuyDAO {
 			e.printStackTrace();
 			throw new DAOException("レコードの取得に失敗しました。");
 
+		}
+	}
+
+	public void insertBuy(BuyBean bean) throws DAOException {
+		// TODO 自動生成されたメソッド・スタブ
+		String sql = "INSERT INTO buy(user_id,stock_id,selesday,price,remarks) VALUES(?,?,current_timestamp,?,?)";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, bean.getUserid());
+			st.setInt(2, bean.getStockid());
+			st.setInt(3, bean.getPrice());
+			st.setString(4, bean.getRemarks());
+			
+
+			st.executeUpdate();
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの操作に失敗しました。");
+		}
+
+	}
+
+	public void deleteStock(int id) throws DAOException {
+		// TODO 自動生成されたメソッド・スタブ
+		String sql = "DELETE FROM stock WHERE stock_id = ?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, id);
+			
+
+			st.executeUpdate();
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+			throw new DAOException("レコードの操作に失敗しました。");
 		}
 	}
 }
