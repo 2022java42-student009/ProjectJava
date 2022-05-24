@@ -122,6 +122,26 @@ public class AccountServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
+		} else if (action.equals("end")) {
+
+			// ユーザ情報変更（仮） 豊住川瀬担当
+			try {
+				AccountDAO dao = new AccountDAO();
+				MemberBean endmember = (MemberBean) session.getAttribute("endmember");
+//				MemberBean member = (MemberBean) session.getAttribute("member");
+//				int userid = member.getId();
+//
+//				MemberBean editmember = (MemberBean) session.getAttribute("editmember");
+//
+//				dao.useredit(editmember.getName(), editmember.getAddress(), editmember.getTel(), editmember.getMail(),
+//						editmember.getPassword(), userid);
+				
+				gotoPage(request, response, "userend.jsp");
+			} catch (DAOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
+
 		}
 
 	}
