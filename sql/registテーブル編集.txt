@@ -1,0 +1,10 @@
+この.txtがあるフォルダ内で「Alt+Shift+右クリック」してください
+↓
+「cmd」と入力しEnter
+↓
+「psql -U postgres」でアカウントログインしてください
+（PW himitu）
+↓
+「\c projectjava」でサーバー移動
+↓
+「\i secondupdata.txt;」と入力して更新

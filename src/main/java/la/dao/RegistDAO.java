@@ -64,9 +64,10 @@ public class RegistDAO {
 		}
 	}
 
-	// ISBMでソートされたデータ
+	
 
 	// 会員ようデータ料金変更
+	
 	
 	//出品
 	public void listingRegist(int book_number,String state,int price,String remarks,int userid) throws DAOException{
@@ -85,7 +86,7 @@ public class RegistDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 		
-		String sql_2="insert into regist values (?,?,current_timestamp,?,?)";
+		String sql_2="insert into regist(user_id,book_number,regist_day,price,remarks) values (?,?,current_timestamp,?,?)";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql_2);) {
 			st.setInt(1, userid);
