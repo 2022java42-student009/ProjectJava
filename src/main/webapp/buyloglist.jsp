@@ -9,7 +9,7 @@
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
-	出品履歴一覧
+	購入履歴一覧
 	
 		<table border="1">
 			<tr>
