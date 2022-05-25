@@ -27,7 +27,7 @@ public class BuyDAO {
 	}
 
 	public List<BuyArrangeBean> findAllBuylog(int sample) throws DAOException {
-		String sql = "SELECT buy.user_id, buy.selesday, book.book_title, stock.book_number,bookcategory.category_name, stock.price FROM buy JOIN stock ON buy.stock_id = stock.stock_id JOIN book ON stock.book_number = book.book_number JOIN bookcategory ON book.category_id = bookcategory.category_id WHERE user_id = ?";
+		String sql = "SELECT buy.user_id, buy.selesday, book.book_title, buy.book_number,bookcategory.category_name, buy.price FROM buy JOIN book ON buy.book_number = book.book_number JOIN bookcategory ON book.category_id = bookcategory.category_id WHERE user_id = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -64,14 +64,15 @@ public class BuyDAO {
 
 	public void insertBuy(BuyBean bean) throws DAOException {
 		// TODO 自動生成されたメソッド・スタブ
-		String sql = "INSERT INTO buy(user_id,stock_id,selesday,price,remarks) VALUES(?,?,current_timestamp,?,?)";
+		String sql = "INSERT INTO buy(user_id,selesday,book_number,stock_state,price,remarks) VALUES(?,current_timestamp,?,?,?,?)";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setInt(1, bean.getUserid());
-			st.setInt(2, bean.getStockid());
-			st.setInt(3, bean.getPrice());
-			st.setString(4, bean.getRemarks());
+			st.setInt(2, bean.getBooknumber());
+			st.setString(3, bean.getStock_state());
+			st.setInt(4, bean.getPrice());
+			st.setString(5, bean.getRemarks());
 			
 
 			st.executeUpdate();

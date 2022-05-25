@@ -13,7 +13,7 @@
 		名前<input type ="text" name ="username" value="${user.name }" required><br>
 		パスワード<input type="text" name = "userpass" value="${user.password }" required><br>
 		
-		<input type = "submit" value ="確認" formaction="/ProjectJava/AccountManagementServlet?action=editcheck">
+		<input type = "submit" value ="変更" formaction="/ProjectJava/AccountManagementServlet?action=editcheck">
 		<input type = "submit" value ="削除" formaction="/ProjectJava/AccountManagementServlet?action=deletecheck">
 		
 	</form>

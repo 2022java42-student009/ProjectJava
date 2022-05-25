@@ -56,7 +56,7 @@ public class BuyServlet extends HttpServlet {
 			try {
 				StockBean stock = (StockBean) session.getAttribute("stock");
 				MemberBean member = (MemberBean) session.getAttribute("member");
-				BuyBean bean = new BuyBean(member.getId(), stock.getId(), stock.getPrice(), stock.getRemarks());
+				BuyBean bean = new BuyBean(member.getId(), stock.getBook().getIsbm(), stock.getState(), stock.getPrice(), stock.getRemarks());
 				BuyDAO dao = new BuyDAO();
 				dao.insertBuy(bean);
 				dao.deleteStock(stock.getId());

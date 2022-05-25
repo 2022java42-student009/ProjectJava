@@ -29,7 +29,7 @@ public class RegistDAO {
 
 	// 登録された本全データ
 	public List<RegistArrangeBean> findAllRegist(int userid) throws DAOException {
-		String sql = "select stock.stock_id,book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,regist.price,regist.remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id INNER JOIN stock ON stock.stock_id = regist.stock_id WHERE user_id = ?;";
+		String sql = "select stock.stock_id,book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,regist.price,regist.remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id INNER JOIN stock ON stock.stock_id = regist.stock_id WHERE user_id = ?";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -99,7 +99,7 @@ public class RegistDAO {
 	// 出品履歴個別参照
 	public List<RegistArrangeBean> findsingleRegist(int stock_id) throws DAOException {
 		String sql = "select stock.stock_id,book.book_number,book.book_title,book.author,bookcategory.category_name,regist_day,regist.price,regist.remarks FROM regist INNER JOIN book ON regist.book_number = book.book_number INNER JOIN bookcategory ON book.category_id = bookcategory.category_id INNER JOIN stock ON stock.stock_id = regist.stock_id WHERE stock.stock_id = ?";
-
+		
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setInt(1, stock_id);
