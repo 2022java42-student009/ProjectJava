@@ -2,3 +2,9 @@ DROP TABLE admin;
 DROP TABLE member;
 \i admin.sql;
 \i member.sql;
+
+//0525 UNIQUE追加
+
+ALTER TABLE admin ADD constraint admin_mail_key unique(mail);
+ALTER TABLE member ADD constraint member_mail_key unique(mail);
+
