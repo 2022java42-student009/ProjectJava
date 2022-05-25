@@ -13,7 +13,7 @@
 	<form action="/ProjectJava/AccountServlet" method="post">
 		<input type="hidden" name="action" value="end"> 
 		<input	type="submit" value="退会機能">
-		<button onclick="location.href='useredit.jsp'">キャンセル</button>
 	</form>
+	<button onclick="location.href='useredit.jsp'">キャンセル</button>
 </body>
 </html>
