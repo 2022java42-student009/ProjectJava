@@ -143,6 +143,9 @@ public class AccountServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 
+		} else if (action.equals("logout")) {
+			session.invalidate();
+			gotoPage(request, response, "index.jsp");
 		}
 
 	}

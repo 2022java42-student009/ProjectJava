@@ -21,7 +21,7 @@
 	<button onclick="location.href='useredit.jsp'">アカウント情報編集</button>
 	<br>
 	<br>
-	<button onclick="location.href='index.jsp'">ログアウト</button>
+	<button onclick="location.href='/ProjectJava/AccountServlet?action=logout'">ログアウト</button>
 
 </body>
 </html>
