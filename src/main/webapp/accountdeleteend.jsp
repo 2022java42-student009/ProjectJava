@@ -8,7 +8,7 @@
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
-<button onclick="location.href=''">退会しました</button>
+<button onclick="location.href='index.jsp'">退会しました</button>
 
 </body>
 </html>
