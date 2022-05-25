@@ -13,6 +13,6 @@
 	<form action="/ProjectJava/AccountManagementServlet?action=deletecheckend" method="post">
 		<input type="submit" value="削除">
 	</form>
-	<button onclick="location.href=''">キャンセル</button>
+	<button onclick="location.href='/ProjectJava/AccountManagementServlet'">キャンセル</button>
 </body>
 </html>

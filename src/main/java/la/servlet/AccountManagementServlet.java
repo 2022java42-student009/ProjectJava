@@ -56,7 +56,7 @@ public class AccountManagementServlet extends HttpServlet {
 			try {
 				AccountDAO dao = new AccountDAO();
 				List<MemberBean> members = dao.findMemberById(id);
-				request.setAttribute("user", members.get(0));
+				session.setAttribute("user", members.get(0));
 				session.setAttribute("beforeid", members.get(0).getId());
 				gotoPage(request, response, "usermanagement.jsp");
 			} catch (DAOException e) {

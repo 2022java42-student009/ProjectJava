@@ -10,7 +10,7 @@
 <jsp:include page="/userheader.jsp"/>
 この教科書を購入します。よろしいですか？<br>
 <form action="/ProjectJava/BuyServlet?action=buyend" method="post">
-	ISBN ${stock.id }<br>
+	ISBN ${stock.book.isbm }<br>
 	カテゴリー ${stock.book.categoryname }<br>
 	タイトル ${stock.book.title }<br>
 	著者名 ${stock.book.author }<br>
@@ -20,6 +20,6 @@
 	<input type = "submit" value ="購入する">
 	
 </form>
-<button onclick="location.href=''">いいえ</button>
+<button onclick="location.href='booksearch.jsp'">いいえ</button>
 </body>
 </html>
