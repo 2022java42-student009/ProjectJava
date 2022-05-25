@@ -9,14 +9,14 @@
 <body>
 <jsp:include page="/adminheader.jsp"/>
 	<form action="?" method="post">
-		会員ID<input type ="text" name ="userid" value="${user.id }"><br>
-		名前<input type ="text" name ="username" value="${user.name }"><br>
-		パスワード<input type="text" name = "userpass" value="${user.password }"><br>
-		<button onclick="location.href=''">削除</button>
+		会員ID<input type ="text" name ="userid" value="${user.id }" required><br>
+		名前<input type ="text" name ="username" value="${user.name }" required><br>
+		パスワード<input type="text" name = "userpass" value="${user.password }" required><br>
+		
 		<input type = "submit" value ="確認" formaction="/ProjectJava/AccountManagementServlet?action=editcheck">
 		<input type = "submit" value ="削除" formaction="/ProjectJava/AccountManagementServlet?action=deletecheck">
 		
 	</form>
-	<button onclick="location.href=''">キャンセル</button>
+	<button onclick="location.href='/ProjectJava/AccountManagementServlet'">キャンセル</button>
 </body>
 </html>

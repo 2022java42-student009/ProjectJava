@@ -14,7 +14,7 @@
 	<br>
 		会員IDで検索する:
 		<br>
-		<input type="text"  name="id" >
+		<input type="number"  name="id" required>
 		<input type="submit" value="検索">
 	</form>
 	
