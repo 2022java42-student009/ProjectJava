@@ -15,8 +15,8 @@
 	<br>
 	<br>
 	<form action="/ProjectJava/AccountServlet" method="post">
-		メールアドレス<input type="email" name="email"><br> 
-		パスワード<input type="password" name="pass">
+		メールアドレス<input type="email" name="email" required><br> 
+		パスワード<input type="password" name="pass" required>
 		<c:if test="${not empty errmsg }">
 			<p style="color: red;">${errmsg }</p>
 		</c:if>

@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>adminbookserch</title>
+ <style type="text/css">
+.err{
+	color: red;
+}
+ 
+ </style>
 </head>
 <body>
 <jsp:include page="/adminheader.jsp"/>
@@ -13,7 +19,7 @@
 
 
 	<form action="/ProjectJava/BookManagementServlet?action=isbn" method="post">
-		ISBN番号検索: <input type="text" name="id"> <input type="submit"
+		ISBN番号検索: <input type="number" name="id"> <input type="submit"
 			value="検索">
 	</form>
 
@@ -26,6 +32,9 @@
 			${book.isbm } ${book.title } ${book.author }
 			<button onclick="location.href='/ProjectJava/BookManagementServlet?action=edit&id=${book.isbm}'">編集</button>
 		</div>
+	</c:if>
+	<c:if test="${empty books && empty book }">
+		<p class="err">該当する教科書が見つかりませんでした</p>
 	</c:if>
 
 	<c:forEach items="${books }" var="book">

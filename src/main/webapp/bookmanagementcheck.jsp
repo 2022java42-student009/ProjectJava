@@ -13,10 +13,10 @@
 	<br>
 
 	<form action="/ProjectJava/BookManagementServlet?action=editcheckend" method="post">
-		ISBN ${book.isbm }<br>
-		分類 ${book.categoryname }<br>
-		タイトル ${book.title }<br>
-		著者名 ${book.author}
+		ISBN ${editbook.isbm }<br>
+		分類 ${editbook.categoryname }<br>
+		タイトル ${editbook.title }<br>
+		著者名 ${editbook.author}
 		
 		<input type="submit" value="確定">
 	</form>

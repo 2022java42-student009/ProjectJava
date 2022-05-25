@@ -11,7 +11,7 @@
 <jsp:include page="/adminheader.jsp"/>
 	<h1>教科書更新画面</h1>
 	<form action="?" method="post">
-		ISBN <input type="text" name="number" value="${book.isbm }"> <br>
+		ISBN <input type="text" name="number" value="${book.isbm }" required> <br>
 		分類
 
 		<select name="category">
@@ -19,13 +19,13 @@
 			<option value="${category.id },${category.name }">${category.name }</option>
 			
 		</c:forEach>
-		</select> <br>タイトル <input type="text" name="title" value="${book.title }">
-		<br> 著者名 <input type="text" name="author" value="${book.author }">
+		</select> <br>タイトル <input type="text" name="title" value="${book.title }" required>
+		<br> 著者名 <input type="text" name="author" value="${book.author }" required>
 		<br> <input type="submit" value="確認" formaction="/ProjectJava/BookManagementServlet?action=editcheck">
 		<br> <input type="submit" value="削除" formaction="/ProjectJava/BookManagementServlet?action=deletecheck">
 		
 	</form>
 	
-	<button onclick="location.href='adminbooksearch.jsp'">キャンセル</button>
+	<button onclick="location.href='/ProjectJava/BookManagementServlet'">キャンセル</button>
 </body>
 </html>

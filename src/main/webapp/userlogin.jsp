@@ -11,8 +11,8 @@
 <jsp:include page="/indexheader.jsp"/>
 	<form action="/ProjectJava/AccountServlet" method="post">
 		<h3>ログイン</h3>
-		メールアドレス <input type="email" name="email"> <br> パスワード <input
-			type="password" name="pass">
+		メールアドレス <input type="email" name="email" required> <br> パスワード <input
+			type="password" name="pass" required>
 		<c:if test="${not empty errmsg }">
 			<p style="color: red;">${errmsg }</p>
 		</c:if>
