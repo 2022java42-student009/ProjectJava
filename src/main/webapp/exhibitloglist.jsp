@@ -6,7 +6,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>出品履歴一覧</title>
+<title>exhibitloglist</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/registstyle.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/buttonstyle.css">
 </head>
