@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/registstyle.css">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
@@ -32,7 +34,6 @@
 				<td align="right">${regist.registday}</td>
 				<td align="right">${regist.price}</td>
 				<td align="right">${regist.remarks}</td>
-				<!--  <td align="right">${regist.stock_id}</td>-->
 				<td align="right">
 				<button onclick="location.href='/ProjectJava/RegistServlet?action=changenextlist&listnumber=${regist.stock_id}'">編集</button>
 				<button onclick="location.href='/ProjectJava/RegistServlet?action=deletecheck&listnumber=${regist.stock_id}'">削除</button></td>
