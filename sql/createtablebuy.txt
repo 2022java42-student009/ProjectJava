@@ -7,3 +7,9 @@ create table public.buy (
   , price integer not null
   , remarks character varying
 );
+
+DELETE FROM regist;
+DELETE FROM stock;
+
+SELECT setval ('regist_stock_id_seq', 1, FALSE);
+SELECT setval ('stock_stock_id_seq', 1, FALSE);
