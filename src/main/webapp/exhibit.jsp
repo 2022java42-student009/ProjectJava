@@ -10,23 +10,28 @@
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
-	教科書登録
+<div class="inner"
+		style="width: 400px; text-align: left; margin: 0 auto;">
+	<h2 style="text-align: center">教科書登録</h2>
 	<form action="/ProjectJava/RegistServlet" method="post">
-		ISBN番号<input type="text" name="number" required><br> 
-		値段<input type="number" name="price" required><br>
+		ISBN番号<br><input type="text" name="number" required><br><br> 
+		値段<br><input type="number" name="price" required><br><br>
 		<%--状態もプルダウンの方がいいのか（新品、未使用、使用済み等）--%>
-		状態<select name="example">
+		状態<br><select name="example">
 			<option value="新品">新品</option>
 			<option value="未使用">未使用</option>
 			<option value="中古">中古</option>
-		</select> <br>
-		備考<input type="text" name="remarks"><br>
+		</select> <br><br>
+		備考<br><input type="text" name="remarks">
 		<c:if test="${not empty errmsg }">
 			<p style="color: red;">${errmsg }</p>
 		</c:if>
+		<br><br><div align="center" class="example-r">
 		<input type="submit" class="login_btn" value="登録確認">
-		<input type="hidden" name="action" value=listingcheck> <br>
+		<input type="hidden" name="action" value=listingcheck>
+		</div> <br>
 	</form>
-	<button onclick="location.href='usertop.jsp'"class="back_btn">戻る</button>
+
+	<div align="right" class="example-r"><button onclick="location.href='usertop.jsp'" class="back_btn">戻る</button></div>	</div>
 </body>
 </html>

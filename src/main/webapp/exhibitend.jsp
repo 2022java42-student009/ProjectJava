@@ -5,11 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>exhibitend</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
-	出品が完了しました
+	<h3 style="text-align: center">出品が完了しました</h3>
 	<br>
-	<button onclick="location.href='usertop.jsp'">トップに戻る</button>
+	<div align="center" class="example-r"><button onclick="location.href='usertop.jsp'" class=top_btn>トップに戻る</button></div>
+	
 </body>
 </html>

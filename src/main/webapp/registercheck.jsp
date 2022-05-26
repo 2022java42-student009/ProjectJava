@@ -11,7 +11,7 @@
 	<jsp:include page="/indexheader.jsp" />
 	<div class="inner"
 		style="width: 600px; text-align: left; margin: 0 auto;">
-		<h3>以下の内容で登録してよいか確認してください</h3>
+		<h3>以下の内容で登録します。よろしいですか？</h3>
 		<br>
 		<div>
 			<p class="text">

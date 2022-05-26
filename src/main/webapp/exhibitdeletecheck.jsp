@@ -9,10 +9,13 @@
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
-本当に削除してよろしいですか？<br>
+<div class="inner"
+		style="width: 400px; text-align: left; margin: 0 auto;">
+<h3 style="text-align: center">本当に削除してよろしいですか？</h3><br>
 	
-	<button class="delete_btn" onclick="location.href='/ProjectJava/RegistServlet?action=deletelist'">削除する</button>
+	<div align="center" class="example-r"><button class="delete_btn" onclick="location.href='/ProjectJava/RegistServlet?action=deletelist'">削除する</button></div>
 	<br>
-	<button class="back_btn" onclick="location.href='exhibitloglist.jsp'">キャンセル</button>
+	<div align="right" class="example-r"><button class="back_btn" onclick="location.href='exhibitloglist.jsp'">キャンセル</button></div>
+	</div>
 </body>
 </html>
