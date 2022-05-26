@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>出品取り消し</title>
+<title>exhibitdeletecheck</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/buttonstyle.css">
 </head>
 <body>
