@@ -19,8 +19,8 @@
 					<input type="text" name="username" placeholder="(例)教科書　太郎" required><br>
 					<br>住所<br>
 					<input type="text" name="address" required><br>
-					<br>電話番号<font color="coral">（ハイフンなし)</font><br>
-					<input type="tel" name="tel" pattern="[\d\-]*" maxlength="11" required><br>
+					<br>電話番号<font color="coral">（ハイフンなし半角数字)</font><br>
+					<input type="tel" name="tel" pattern="[\d\-]*" maxlength="11" placeholder="09011112222" required><br>
 					<br>メールアドレス<br>
 					<font color="coral">(半角英数字, 他の会員が登録済みのメールアドレスは登録できません)</font><br>
 					<input type="email" name="mail" required><br>

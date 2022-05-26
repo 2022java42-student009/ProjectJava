@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>exhibit</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
@@ -23,9 +24,9 @@
 		<c:if test="${not empty errmsg }">
 			<p style="color: red;">${errmsg }</p>
 		</c:if>
-		<input type="submit" value="登録確認">
+		<input type="submit" class="login_btn" value="登録確認">
 		<input type="hidden" name="action" value=listingcheck> <br>
 	</form>
-	<button onclick="location.href='usertop.jsp'">戻る</button>
+	<button onclick="location.href='usertop.jsp'"class="back_btn">戻る</button>
 </body>
 </html>

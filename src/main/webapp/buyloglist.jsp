@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>buyloglist</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
@@ -33,7 +34,7 @@
 	</table>
 	
 	<br>
-	<button onclick="location.href='usertop.jsp'">戻る</button>
+	<button onclick="location.href='usertop.jsp'" class ="back_btn">戻る</button>
 
 </body>
 </html>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>accountdeletecheck</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
@@ -12,7 +13,7 @@
 	<br>
 	<form action="/ProjectJava/AccountServlet" method="post">
 		<input type="hidden" name="action" value="end"> 
-		<input	type="submit" value="退会機能">
+		<input	type="submit" value="退会">
 	</form>
 	<button onclick="location.href='useredit.jsp'">キャンセル</button>
 </body>
