@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>exhibitedit</title>
+<title>情報編集画面</title>
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
