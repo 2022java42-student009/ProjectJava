@@ -26,7 +26,7 @@ header a{
  </style>
  <header>
  
-<h1 class="logo">TextOff</h1>
+<h1 class="logo">TEXT-OFF</h1>
 
 
 </header>
