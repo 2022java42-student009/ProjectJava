@@ -5,12 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>registerend</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/indexheader.jsp"/>
-	会員登録が完了しました
+
+	<h3 style="text-align: center">会員登録が完了しました</h3>
 	<br>
-	<button onclick="location.href='userlogin.jsp'">ログイン</button><br>
-	<button onclick="location.href='index.jsp'">戻る</button>
+	<div align="center" class="example-r"><button onclick="location.href='userlogin.jsp'" class="login_btn">ログイン</button></div><br>
+	<div align="right" class="example-r"><button onclick="location.href='index.jsp'" class="back_btn">戻る</button></div>
+	
 </body>
 </html>

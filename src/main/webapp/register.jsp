@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>register</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="/indexheader.jsp" />
@@ -14,12 +15,12 @@
 			<h2 style="text-align: center">会員登録画面</h2>
 			<div>
 				<p class="text">
-					名前（例:教科書　太郎）<br>
-					<input type="text" name="username" required><br>
+					名前<br>
+					<input type="text" name="username" placeholder="(例)教科書　太郎" required><br>
 					<br>住所<br>
 					<input type="text" name="address" required><br>
 					<br>電話番号<font color="coral">（ハイフンなし)</font><br>
-					<input type="tel" name="tel" pattern="[\d\-]*" maxlength="11"required><br>
+					<input type="tel" name="tel" pattern="[\d\-]*" maxlength="11" required><br>
 					<br>メールアドレス<br>
 					<font color="coral">(半角英数字, 他の会員が登録済みのメールアドレスは登録できません)</font><br>
 					<input type="email" name="mail" required><br>
@@ -32,12 +33,12 @@
 					<br>
 					<input type="hidden" name="action" value="registercheck">
 				<div align="center" class="example-r">
-					<input type="submit" value="確認">
+					<input type="submit" value="確認" class="login_btn">
 				</div>
 			</div>
 		</form>
 		<div align="right" class="example-r">
-			<button onclick="location.href='index.jsp'">戻る</button>
+			<button onclick="location.href='index.jsp'" class="back_btn">戻る</button>
 		</div>
 	</div>
 </body>
