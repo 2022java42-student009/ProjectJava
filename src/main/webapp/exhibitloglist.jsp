@@ -45,7 +45,7 @@
 	</table>
 	
 	<br>
-	<button class="green_btn" onclick="location.href='usertop.jsp'">戻る</button>
+	<button class="back_btn" onclick="location.href='usertop.jsp'">戻る</button>
 
 </body>
 </html>

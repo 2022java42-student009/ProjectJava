@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>buyloglist</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/registstyle.css">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
