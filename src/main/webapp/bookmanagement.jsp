@@ -46,7 +46,7 @@ h2{
 	
 	<h2>教科書更新画面</h2>
 	<form action="?" method="post">
-		ISBN<br> <input type="text" name="number" value="${book.isbm }" required> <br>
+		ISBN<br> <input type="number" name="number" value="${book.isbm }" required> <br>
 		分類<br>
 
 		<select name="category">
