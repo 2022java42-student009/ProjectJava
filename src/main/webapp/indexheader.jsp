@@ -26,7 +26,7 @@ header a{
  </style>
  <header>
  
-<a href="usertop.jsp"><h1 class="logo">TextOff</h1></a>
+<h1 class="logo">TextOff</h1>
 
 
 </header>
