@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+.top_btn {
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 350px;
+	height: 60px;
+}
+
+.login_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: #1a73e8;
+	border: none;
+	border-radius: 3px;
+}
+
+.delete_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: #ff2828;
+	border: none;
+	border-radius: 3px;
+}
+
+.green_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: #55ee55;
+	border: none;
+	border-radius: 3px;
+}
+
+.orange_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: orange;
+	border: none;
+	border-radius: 3px;
+}
+
+.back_btn {
+	display: block;
+	padding: 5px 20px;
+	background: lightgray;
+	border: none;
+	border-radius: 3px;
+}
