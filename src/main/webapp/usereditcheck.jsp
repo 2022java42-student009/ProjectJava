@@ -5,21 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>usereditcheck</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
+	<div class="inner"
+		style="width: 400px; text-align: left; margin: 0 auto;">
 	<%--画面レイアウト設計書には以下の文の記載はないですが、追加したほうが良いかと思います。 --%>
-	変更してよろしいですか？
+	<h3>変更してよろしいですか？</h3>
 	<br>
 	<form action="/ProjectJava/AccountServlet" method="post">
-		名前:${editmember.name}<br> 
-		住所:${editmember.address}<br>
-		電話番号:${editmember.tel}<br> 
-		メールアドレス:${editmember.mail}<br>
-		パスワード:${editmember.password}<br> 
+		名前<br>${editmember.name}<br><br> 
+		住所<br>${editmember.address}<br><br>
+		電話番号<br>${editmember.tel}<br><br>
+		メールアドレス<br>${editmember.mail}<br><br>
+		パスワード<br>${editmember.password}<br><br> 
+		<div align="center" class="example-r">
 		<input type="hidden" name="action" value="edit"> 
-		<input type="submit" value="変更する">
+		<input type="submit" class="login_btn" value="変更する">
+		</div>
 	</form>
-	<button onclick="location.href='useredit.jsp'">キャンセル</button>
+	<div align="right" class="example-r">
+	<button onclick="location.href='useredit.jsp'"class="back_btn">キャンセル</button></div>
+	</div>
 </body>
 </html>
