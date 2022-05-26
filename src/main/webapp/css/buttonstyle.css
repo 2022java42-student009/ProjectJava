@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.top_btn {
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 350px;
+	height: 60px;
+	font-size: 18px;
+}
+
+.login_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: #1a73e8;
+	border: none;
+	border-radius: 3px;
+}
+
+.login_btn:hover {
+	background: #1968cf;
+}
+
+.delete_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: #ff2828;
+	border: none;
+	border-radius: 3px;
+}
+
+.delete_btn:hover {
+	background: #ee2626;
+}
+
+.green_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: #55ee55;
+	border: none;
+	border-radius: 3px;
+}
+
+.green_btn:hover {
+	background: #4fdd4f;
+}
+
+.orange_btn {
+	display: block;
+	padding: 5px 20px;
+	color: #fff;
+	background: orange;
+	border: none;
+	border-radius: 3px;
+}
+
+.orange_btn:hover {
+	background: rgb(255, 136, 0);
+}
+
+.back_btn {
+	display: block;
+	padding: 5px 20px;
+	background: lightgray;
+	border: none;
+	border-radius: 3px;
+}
+
+.back_btn:hover {
+	background: rgb(196, 195, 195);
+}
