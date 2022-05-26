@@ -36,7 +36,7 @@
 				<td align="right">${regist.price}</td>
 				<td align="right">${regist.remarks}</td>
 				<td align="right">
-				<button class="login_btn" onclick="location.href='/ProjectJava/RegistServlet?action=changenextlist&listnumber=${regist.stock_id}'">編集</button>
+				<button class="green_btn" onclick="location.href='/ProjectJava/RegistServlet?action=changenextlist&listnumber=${regist.stock_id}'">編集</button>
 				<button class="delete_btn" onclick="location.href='/ProjectJava/RegistServlet?action=deletecheck&listnumber=${regist.stock_id}'">削除</button></td>
 				
 			</tr>
@@ -45,7 +45,7 @@
 	</table>
 	
 	<br>
-	<button onclick="location.href='usertop.jsp'">戻る</button>
+	<button class="green_btn" onclick="location.href='usertop.jsp'">戻る</button>
 
 </body>
 </html>

@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>exhibitdeletecheck</title>
+<title>出品取り消し</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/buttonstyle.css">
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
 本当に削除してよろしいですか？<br>
 	
-	<button onclick="location.href='/ProjectJava/RegistServlet?action=deletelist'">削除する</button>
-	
-	<button onclick="location.href='exhibitloglist.jsp'">キャンセル</button>
+	<button class="delete_btn" onclick="location.href='/ProjectJava/RegistServlet?action=deletelist'">削除する</button>
+	<br>
+	<button class="back_btn" onclick="location.href='exhibitloglist.jsp'">キャンセル</button>
 </body>
 </html>
