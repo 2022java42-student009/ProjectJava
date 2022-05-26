@@ -27,7 +27,15 @@ public class StockSerchServlet extends HttpServlet {
 		String action = request.getParameter("action");
 
 		if (action == null || action.length() == 0) {
-			gotoPage(request, response, "booksearch.jsp");
+			try {
+				StockDAO dao = new StockDAO();
+				List<StockBean> stocks = dao.findAllStock();
+				request.setAttribute("stocks", stocks);
+				gotoPage(request, response, "booksearch.jsp");
+			} catch (DAOException e) {
+				// TODO 自動生成された catch ブロック
+				e.printStackTrace();
+			}
 
 		} else if (action.equals("category")) {
 			int categoryid = Integer.parseInt(request.getParameter("categoryid"));

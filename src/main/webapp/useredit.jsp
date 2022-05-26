@@ -10,11 +10,11 @@
 <jsp:include page="/userheader.jsp"/>
 <h1 style="text-align: center">会員情報変更画面</h1>
 <form action="/ProjectJava/AccountServlet" method="post">
-	名前<input type="text" name="name" value="${member.name }"><br>
-  	住所<input type="text" name="address" value="${member.address}"><br> 
-  	電話番号<input type="tel" name="tel" value="${member.tel}"><br> 
-  	メールアドレス<input type="email" name="mail" value="${member.mail}"><br> 
-  	パスワード<input type="password" name="password" value="${member.password}"><br>
+	名前<input type="text" name="name" value="${member.name }" required><br>
+  	住所<input type="text" name="address" value="${member.address}" required><br> 
+  	電話番号<input type="tel" name="tel" value="${member.tel}" required><br> 
+  	メールアドレス<input type="email" name="mail" value="${member.mail}" required><br> 
+  	パスワード<input type="password" name="password" value="${member.password}" required><br>
   	<input type="hidden" name="action" value="useredit">
 	<input type="submit" value="確認">
 	

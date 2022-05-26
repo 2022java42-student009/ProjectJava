@@ -49,6 +49,10 @@ public class RegistServlet extends HttpServlet {
 				String remarks = request.getParameter("remarks");
 				BookDAO dao = new BookDAO();
 				BookBean book = (BookBean) dao.findBookByIsbm(isbm);
+				if(book == null) {
+					request.setAttribute("errmsg", "該当する教科書が見つかりませんでした");
+					gotoPage(request, response, "/exhibit.jsp");
+				}
 
 				MemberBean bean = (MemberBean) session.getAttribute("member");
 				StockBean Sbean = new StockBean(bean.getId(), book, state, price, remarks);

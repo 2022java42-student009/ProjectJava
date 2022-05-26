@@ -20,6 +20,6 @@
 	<input type = "submit" value ="購入する">
 	
 </form>
-<button onclick="location.href='booksearch.jsp'">いいえ</button>
+<button onclick="location.href='/ProjectJava/StockSerchServlet'">いいえ</button>
 </body>
 </html>

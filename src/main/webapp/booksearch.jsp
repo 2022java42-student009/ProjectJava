@@ -26,7 +26,7 @@
 	
 	<form action="/ProjectJava/StockSerchServlet?action=isbn" method="post">
 		ISBN番号検索:
-		<input type="text"  name="id" >
+		<input type="text"  name="id" required>
 		<input type="submit" value="検索">
 	</form>
 	
@@ -38,6 +38,11 @@
 	
 	
 	<h2>検索結果</h2>
+	
+	<c:if test="${empty stocks }">
+		<p style="color: red;">教科書が見つかりませんでした</p>
+	</c:if>
+	
 	<c:forEach items="${stocks }" var="stock">
 	<div class="items" style="border: 1px solid; margin: 10px auto; width">
 		${stock.book.title }
