@@ -59,7 +59,7 @@ h2 {
 				<input type="submit" class="login_btn" value="確認"
 					formaction="/ProjectJava/AccountServlet"> <input
 					type="submit" class=back_btn value="キャンセル"
-					formaction="accountdeletecheck.jsp">
+					formaction="usertop.jsp">
 			</div>
 
 		</form>
