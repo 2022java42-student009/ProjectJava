@@ -12,5 +12,9 @@
 <h3 style="text-align: center"><br>
 出品が完了しました</h3><br>
 <div align="center" class="example-r"><button onclick="location.href='usertop.jsp'"class=top_btn>トップページに戻る</button></div>
+<div align="center" class="example-r">
+		<button class="top_btn"
+			onclick="location.href='/ProjectJava/RegistServlet?action=registlist'">出品履歴一覧</button>
+	</div>
 </body>
 </html>
