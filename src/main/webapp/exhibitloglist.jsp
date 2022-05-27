@@ -9,6 +9,11 @@
 <title>exhibitloglist</title>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/registstyle.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/buttonstyle.css">
+<style>
+.back_btn{
+	margin-left:50px;
+}
+</style>
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
