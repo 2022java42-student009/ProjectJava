@@ -12,6 +12,10 @@ form{
 	box-shadow: 3px 3px 3px rgb(240, 240, 240);
 	margin-bottom: 30px;
 }
+.back_btn{
+	margin-bottom:50px;
+}
+
 </style>
 <title>buycheck</title>
 <link href="css/buttonstyle.css" rel="stylesheet">

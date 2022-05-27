@@ -6,6 +6,11 @@
 <meta charset="UTF-8">
 <title>register</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
+<style>
+.back_btn{
+margin-bottom:50px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="/indexheader.jsp" />
