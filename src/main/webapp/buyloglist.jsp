@@ -8,6 +8,11 @@
 <title>buyloglist</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/registstyle.css">
+<style>
+.back_btn{
+	margin-left:50px;
+}
+</style>
 </head>
 <body>
 <jsp:include page="/userheader.jsp"/>
