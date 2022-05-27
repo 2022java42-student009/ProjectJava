@@ -48,6 +48,13 @@ table tr:nth-child(even) {
 .back_btn {
 	padding: 2px 10px;
 }
+.back{
+	margin: 30px 0;
+	
+}
+.back .back_btn{
+	margin-left: auto;
+}
 
 .err {
 	color: red;
@@ -112,6 +119,9 @@ table tr:nth-child(even) {
 
 				</c:forEach>
 			</table>
+			<div class="back">
+			<button onclick="location.href='admintop.jsp'" class="back_btn">戻る</button>
+			</div>
 		</div>
 	</div>
 </body>

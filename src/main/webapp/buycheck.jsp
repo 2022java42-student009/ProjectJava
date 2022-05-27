@@ -4,6 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style type="text/css">
+form{
+	background: rgb(250, 250, 250);
+	border-radius: 15px;
+	padding: 30px;
+	box-shadow: 3px 3px 3px rgb(240, 240, 240);
+	margin-bottom: 30px;
+}
+</style>
 <title>buycheck</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
 </head>
