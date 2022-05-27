@@ -12,7 +12,7 @@
 	<div class="inner"
 		style="width: 600px; text-align: left; margin: 0 auto;">
 		<form action="/ProjectJava/AccountServlet" method="post">
-			<h2 style="text-align: center">会員登録画面</h2>
+			<h2 style="text-align: center">新規会員登録</h2>
 			<div>
 				<p class="text">
 					名前<br>
