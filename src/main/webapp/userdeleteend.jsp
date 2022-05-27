@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>userdeleteend</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
 <jsp:include page="/adminheader.jsp"/>
-	<h1>削除を完了しました</h1>
+	<div align="center" class="example-r"><h3>削除を完了しました</h3></div>
 	<br>
-	<button onclick="location.href='admintop.jsp'">トップに戻る</button>
+	<div align="center" class="example-r"><button onclick="location.href='admintop.jsp'"class=top_btn>トップに戻る</button></div>
 </body>
 </html>
