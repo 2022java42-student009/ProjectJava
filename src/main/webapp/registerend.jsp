@@ -13,7 +13,7 @@
 	<h3 style="text-align: center">会員登録が完了しました</h3>
 	<br>
 	<div align="center" class="example-r"><button onclick="location.href='userlogin.jsp'" class="login_btn">ログイン</button></div><br>
-	<div align="right" class="example-r"><button onclick="location.href='index.jsp'" class="back_btn">戻る</button></div>
+	<div align="center" class="example-r"><button onclick="location.href='index.jsp'" class="back_btn">戻る</button></div>
 	
 </body>
 </html>

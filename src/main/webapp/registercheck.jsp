@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>registercheck</title>
+<style>
+.back_btn{
+	margin-bottom:50px;
+}
+</style>
 <link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
