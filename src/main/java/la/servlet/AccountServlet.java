@@ -116,6 +116,9 @@ public class AccountServlet extends HttpServlet {
 				dao.useredit(editmember.getName(), editmember.getAddress(), editmember.getTel(), editmember.getMail(),
 						editmember.getPassword(), userid);
 				
+				
+				session.setAttribute("member", session.getAttribute("editmember"));
+				
 				gotoPage(request, response, "usereditend.jsp");
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
@@ -146,7 +149,7 @@ public class AccountServlet extends HttpServlet {
 		} else if (action.equals("logout")) {
 			session.invalidate();
 			gotoPage(request, response, "index.jsp");
-		}
+		} 
 
 	}
 
