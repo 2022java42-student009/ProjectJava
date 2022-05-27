@@ -103,6 +103,7 @@ table tr:nth-child(even) {
 	<c:if test="${empty stocks }">
 		<p style="color: red;">教科書が見つかりませんでした</p>
 	</c:if>
+	<c:if test="${not empty stocks }">
 		<table border="1">
 			<tr>
 				<th style="width: 270px">タイトル名</th>
@@ -124,6 +125,8 @@ table tr:nth-child(even) {
 			</c:forEach>
 
 		</table>
+	</c:if>
+		
 		<div class="back">
 			<button onclick="location.href='usertop.jsp'" class="back_btn">戻る</button>
 		</div>
