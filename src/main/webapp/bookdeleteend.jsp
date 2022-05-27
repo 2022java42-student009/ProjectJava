@@ -9,7 +9,7 @@
 </head>
 <body>
 <jsp:include page="/adminheader.jsp"/>
-	<h3 style="text-align: center">削除を完了しました</h3>
+	<h1 style="text-align: center; margin-top: 50px; ">削除を完了しました</h1>
 	<br>
 	<div align="center" class="example-r"><button onclick="location.href='admintop.jsp'"class=top_btn>トップに戻る</button></div>
 

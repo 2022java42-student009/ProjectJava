@@ -10,8 +10,8 @@
 <body>
 <jsp:include page="/adminheader.jsp"/>
 	<div class="inner"
-		style="width: 400px; text-align: left; margin: 0 auto;">
-<h3 style="text-align: center">本当に削除してよろしいですか？</h3><br>
+		style="width: 600px; text-align: left; margin: 0 auto;">
+<h1 style="text-align: center; margin-top: 50px;">本当に削除してよろしいですか？</h1><br>
 	<br>
 	<div align="center" class="example-r">
 	<form action="/ProjectJava/BookManagementServlet?action=deletecheckend" method="post">

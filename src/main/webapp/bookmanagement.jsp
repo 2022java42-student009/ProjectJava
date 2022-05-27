@@ -36,6 +36,7 @@ h2{
 	margin-left: auto;
 }
 .formbtn{
+	margin-top: 30px;
 	display: flex;
 	justify-content: space-between;
 }
