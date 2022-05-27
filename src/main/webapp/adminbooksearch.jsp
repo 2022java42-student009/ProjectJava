@@ -83,14 +83,15 @@ table tr:nth-child(even) {
 			<c:if test="${empty books && empty book }">
 				<p class="err">該当する教科書が見つかりませんでした</p>
 			</c:if>
-			<c:if test="${not empty book }">
-				<table border="1">
-					<tr>
-						<th style="width: 100px">ISBN番号</th>
-						<th style="width: 270px">タイトル名</th>
-						<th style="width: 230px">著者</th>
-						<th style="width: 50px"></th>
-					</tr>
+			<table border="1">
+				<tr>
+					<th style="width: 100px">ISBN番号</th>
+					<th style="width: 270px">タイトル名</th>
+					<th style="width: 230px">著者</th>
+					<th style="width: 50px"></th>
+				</tr>
+				<c:if test="${not empty book }">
+
 					<tr>
 						<td>${book.isbm }</td>
 						<td>${book.title }</td>
@@ -99,19 +100,12 @@ table tr:nth-child(even) {
 								onclick="location.href='/ProjectJava/BookManagementServlet?action=edit&id=${book.isbm}'"
 								class="back_btn">編集</button></td>
 					</tr>
-				</table>
 
 
-			</c:if>
+				</c:if>
 
 
-			<table border="1">
-				<tr>
-					<th style="width: 100px">ISBM番号</th>
-					<th style="width: 270px">タイトル名</th>
-					<th style="width: 230px">著者</th>
-					<th style="width: 50px"></th>
-				</tr>
+
 				<c:forEach items="${books }" var="book">
 
 					<tr>
@@ -124,10 +118,10 @@ table tr:nth-child(even) {
 					</tr>
 
 				</c:forEach>
+
+
+
 			</table>
-
-
-
 			<div class="back">
 				<button onclick="location.href='admintop.jsp'" class="back_btn">戻る</button>
 			</div>
