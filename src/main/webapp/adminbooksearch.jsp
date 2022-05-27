@@ -49,7 +49,7 @@ table th,td{
 	<form action="/ProjectJava/BookManagementServlet?action=isbn" method="post">
 		ISBN番号検索:
 		<input type="number" name="id"> <input type="submit"
-			value="検索" class="">
+			value="検索" class="back_btn"  style="display: inline">
 	</form>
 
 
