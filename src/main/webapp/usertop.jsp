@@ -4,22 +4,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>usertop</title>
-<link href="css/button.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/buttonstyle.css">
+<style type="text/css">
+.inner {
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	
+}
+.top_btn {
+	margin-top: 50px;
+}
+
+
+#red {
+	background-color: rgb(255,200,200);
+}
+
+</style>
+
 </head>
 <body>
-<jsp:include page="/userheader.jsp"/>
-	<button class="change" id="search" onclick="location.href='/ProjectJava/StockSerchServlet'">教科書検索</button>
-	
-	<button class="change" id="exhibit" onclick="location.href='exhibit.jsp'">出品</button>
-	
-	<button class="change" id="regist" onclick="location.href='/ProjectJava/RegistServlet?action=registlist'">出品履歴一覧</button>
-	<br>
-	<button class="change" id="buy" onclick="location.href='/ProjectJava/BuyServlet?action=buylist'">購入履歴一覧</button>
-	
-	<button class="change" id="edit" onclick="location.href='useredit.jsp'">アカウント情報編集</button>
-	
-	<button class="change" id="logout" onclick="location.href='/ProjectJava/AccountServlet?action=logout'">ログアウト</button>
+	<jsp:include page="/userheader.jsp" />
+	<div class="inner">
+		<button class="top_btn"
+			onclick="location.href='/ProjectJava/StockSerchServlet'">教科書検索</button>
 
+		<button class="top_btn rbtn" onclick="location.href='exhibit.jsp'">出品</button>
+		<br>
+		<button class="top_btn"
+			onclick="location.href='/ProjectJava/RegistServlet?action=registlist'">出品履歴一覧</button>
+
+		<button class="top_btn rbtn" 
+			onclick="location.href='/ProjectJava/BuyServlet?action=buylist'">購入履歴一覧</button>
+		<br>
+		<button class="top_btn" onclick="location.href='useredit.jsp'">アカウント情報編集</button>
+
+		<button class="top_btn rbtn" id="red" 
+			onclick="location.href='/ProjectJava/AccountServlet?action=logout'">ログアウト</button>
+	</div>
 </body>
 </html>
