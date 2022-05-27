@@ -28,7 +28,7 @@ header a{
  
 <a href="usertop.jsp"><h1 class="logo">TEXT-OFF</h1></a>
 <c:if test="${loginstate}">
-	<p>${member.name }さんでログインしています。<button onclick="location.href='/ProjectJava/AccountServlet?action=logout'">ログアウト</button></p>
+	<p>${member.name }さんでログインしています。<button onclick="location.href='/ProjectJava/AccountServlet?action=logout'" class="userlogoutbtn">ログアウト</button></p>
 </c:if>
 
 </header>
