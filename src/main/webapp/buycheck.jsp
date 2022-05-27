@@ -5,21 +5,28 @@
 <head>
 <meta charset="UTF-8">
 <title>buycheck</title>
+<link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
-<jsp:include page="/userheader.jsp"/>
-この教科書を購入します。よろしいですか？<br>
+<jsp:include page="/userheader.jsp"/><div class="inner"
+		style="width: 400px; text-align: left; margin: 0 auto;">
+<h3>この教科書を購入します。よろしいですか？</h3><br>
 <form action="/ProjectJava/BuyServlet?action=buyend" method="post">
-	ISBN ${stock.book.isbm }<br>
-	カテゴリー ${stock.book.categoryname }<br>
-	タイトル ${stock.book.title }<br>
-	著者名 ${stock.book.author }<br>
-	金額 ${stock.price }<br>
-	備考 ${stock.remarks }<br>
+	ISBN<br>${stock.book.isbm }<br><br>
+	カテゴリー<br>${stock.book.categoryname }<br><br>
+	タイトル<br>${stock.book.title }<br><br>
+	著者名<br>${stock.book.author }<br><br>
+	金額<br>${stock.price }<br><br>
+	備考<br>${stock.remarks }<br><br>
+ 	<div align="center" class="example-r">
+	<input type = "submit" value ="購入する" class="login_btn">
+	</div>
 
-	<input type = "submit" value ="購入する">
-	
 </form>
-<button onclick="location.href='/ProjectJava/StockSerchServlet'">いいえ</button>
+<div align="right" class="example-r">
+<button onclick="location.href='/ProjectJava/StockSerchServlet'"class="back_btn">いいえ</button>
+</div>
+</div>
+
 </body>
 </html>
