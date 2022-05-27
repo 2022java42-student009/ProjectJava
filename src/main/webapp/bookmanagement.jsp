@@ -21,8 +21,12 @@ form{
 	box-shadow: 3px 3px 3px rgb(240, 240, 240);
 	margin-bottom: 30px;
 }
-input,select{
+
+.intxt ,select{
 	margin-bottom: 15px;
+	width: 250px;
+	height: 25px;
+	
 }
 h2{
 	text-align: center;
@@ -46,7 +50,7 @@ h2{
 	
 	<h2>教科書更新画面</h2>
 	<form action="?" method="post">
-		ISBN<br> <input type="number" name="number" value="${book.isbm }" required> <br>
+		ISBN<br> <input type="number" name="number" value="${book.isbm }" class="intxt" required> <br>
 		分類<br>
 
 		<select name="category">
@@ -55,8 +59,8 @@ h2{
 			
 		</c:forEach>
 		</select> <br>
-		タイトル<br> <input type="text" name="title" value="${book.title }" required><br>
-		著者名<br> <input type="text" name="author" value="${book.author }" required><br>
+		タイトル<br> <input type="text" name="title" value="${book.title }" class="intxt" required><br>
+		著者名<br> <input type="text" name="author" value="${book.author }" class="intxt" required><br>
 		<div class="formbtn">
 		<input type="submit" value="確認" formaction="/ProjectJava/BookManagementServlet?action=editcheck" class="login_btn">
 		<input type="submit" value="削除" formaction="/ProjectJava/BookManagementServlet?action=deletecheck" class="delete_btn">
