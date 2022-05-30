@@ -38,7 +38,7 @@
 				<td align="center">${regist.title}</td>
 				<td align="right">${regist.author}</td>
 				<td align="right">${regist.categoryname}</td>
-				<td align="right"><fmt:formatDate value="${regist.registday}" pattern="YYYY/MM/DD HH:MM" /></td>
+				<td align="right"><fmt:formatDate value="${regist.registday}" pattern="YYYY/MM/dd HH:MM" /></td>
 				<td align="right">${regist.price}</td>
 				<td align="right">${regist.remarks}</td>
 				<td align="right">
