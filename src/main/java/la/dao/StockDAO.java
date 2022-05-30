@@ -29,7 +29,7 @@ public class StockDAO {
 	
 	//在庫全件検索
 	public List<StockBean> findAllStock() throws DAOException {
-		String sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id";
+		String sql = "SELECT stock_id,book.book_number,book.book_title,c.category_id,c.category_name,book.author,stock_state,price,remarks FROM stock INNER JOIN book ON stock.book_number = book.book_number INNER JOIN bookcategory c ON book.category_id = c.category_id ORDER BY book.book_number";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
