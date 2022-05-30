@@ -32,7 +32,6 @@ public class BuyDAO {
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setInt(1,sample);
-			System.out.println("log");
 			try (ResultSet rs = st.executeQuery();) {
 
 				List<BuyArrangeBean> list = new ArrayList<BuyArrangeBean>();
