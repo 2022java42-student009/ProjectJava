@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
 			
 		<c:forEach items="${Buy}" var="buy">
 			<tr>
-				<td align="center">${buy.selesday}</td>
+				<td align="center"><fmt:formatDate value="${buy.selesday}" pattern="YYYY/MM/dd HH:MM" /></td>
 				<td align="center">${buy.title}</td>
 				<td align="center">${buy.book}</td>
 				<td align="center">${buy.categoryname}</td>

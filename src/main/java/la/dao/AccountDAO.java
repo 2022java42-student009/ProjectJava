@@ -165,7 +165,7 @@ public class AccountDAO {
 
 	// 会員IDから会員検索
 	public List<MemberBean> findMemberById(int id) throws DAOException {
-		String sql = "SELECT * FROM member WHERE user_id = ?";
+		String sql = "SELECT * FROM member WHERE user_id = ? ORDER BY user_id";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
@@ -198,7 +198,7 @@ public class AccountDAO {
 
 	// 会員全員取得
 	public List<MemberBean> findAllMember() throws DAOException {
-		String sql = "SELECT * FROM member";
+		String sql = "SELECT * FROM member ORDER BY user_id";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
