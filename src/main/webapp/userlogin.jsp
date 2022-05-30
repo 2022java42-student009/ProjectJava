@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>userlogin</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/css/buttonstyle.css">
 <style type="text/css">

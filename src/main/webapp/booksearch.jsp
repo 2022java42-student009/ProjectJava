@@ -64,7 +64,7 @@ table tr:nth-child(even) {
 	color: red;
 }
 </style>
-<title>booksearch</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<jsp:include page="/userheader.jsp" />

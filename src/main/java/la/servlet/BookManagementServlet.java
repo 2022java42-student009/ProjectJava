@@ -82,6 +82,7 @@ public class BookManagementServlet extends HttpServlet {
 		} else if (action.equals("editcheck")) {
 			int isbn = Integer.parseInt(request.getParameter("number"));
 			String[] category = request.getParameter("category").split(",");
+			;
 			int categoryid = Integer.parseInt(category[0]);
 			String categoryname = category[1];
 			String title = request.getParameter("title");
