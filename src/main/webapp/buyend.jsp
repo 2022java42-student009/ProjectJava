@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>buyend</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>

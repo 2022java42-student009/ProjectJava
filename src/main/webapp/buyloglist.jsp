@@ -30,7 +30,7 @@
 			
 		<c:forEach items="${Buy}" var="buy">
 			<tr>
-				<td align="center"><fmt:formatDate value="${buy.selesday}" pattern="YYYY/MM/DD HH:MM" /></td>
+				<td align="center"><fmt:formatDate value="${buy.selesday}" pattern="YYYY/MM/dd HH:MM" /></td>
 				<td align="center">${buy.title}</td>
 				<td align="center">${buy.book}</td>
 				<td align="center">${buy.categoryname}</td>
