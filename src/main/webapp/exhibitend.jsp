@@ -16,7 +16,7 @@
 	</div>
 	<div align="center" class="example-r">
 		<button class="top_btn"
-			onclick="location.href='/ProjectJava/RegistServlet?action=registlist'">出品履歴一覧</button>
+			onclick="location.href='exhibit.jsp'">続けて出品する</button>
 	</div>
 </body>
 </html>
