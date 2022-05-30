@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>exhibiteditend</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
