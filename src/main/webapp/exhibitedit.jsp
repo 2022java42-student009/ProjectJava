@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>情報編集画面</title>
+<title>exhibitedit</title>
 <link href="css/buttonstyle.css" rel="stylesheet">
 </head>
 <body>
