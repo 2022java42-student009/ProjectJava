@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +51,13 @@ h2 {
 			電話番号<br>
 			<input type="tel" name="tel" pattern="[\d\-]*" maxlength="11"
 				value="${member.tel}" required><br> メールアドレス<br>
-			<input type="email" name="mail" value="${member.mail}" required><br>
+			<input type="email" name="mail" value="${member.mail}" required>
+			
+			<c:if test="${message }">
+				<p style="color: red; font-size: 13px;">すでにそのメールアドレスは登録されています。</p>
+			</c:if>
+			
+			<br>
 			パスワード<br>
 			<input type="password" name="password" value="${member.password}"
 				required><br>

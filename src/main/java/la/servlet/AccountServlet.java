@@ -83,6 +83,8 @@ public class AccountServlet extends HttpServlet {
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
+				request.setAttribute("message", true);
+				gotoPage(request, response, "register.jsp");
 			}
 			// ユーザ情報変更（仮） 豊住川瀬担当
 		} else if (action.equals("useredit")) {
@@ -113,7 +115,7 @@ public class AccountServlet extends HttpServlet {
 
 				MemberBean editmember = (MemberBean) session.getAttribute("editmember");
 
-				dao.useredit(editmember.getName(), editmember.getAddress(), editmember.getTel(), editmember.getMail(),
+				int result = dao.useredit(editmember.getName(), editmember.getAddress(), editmember.getTel(), editmember.getMail(),
 						editmember.getPassword(), userid);
 				
 				
@@ -123,6 +125,8 @@ public class AccountServlet extends HttpServlet {
 			} catch (DAOException e) {
 				// TODO 自動生成された catch ブロック
 				e.printStackTrace();
+				request.setAttribute("message", true);
+				gotoPage(request, response, "useredit.jsp");
 			}
 			
 //退会機能担当豊住

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,11 @@ margin-bottom:50px;
 					<input type="tel" name="tel" pattern="[\d\-]*" maxlength="11" placeholder="09011112222" required><br>
 					<br>メールアドレス<br>
 					<font color="coral">(半角英数字, 他の会員が登録済みのメールアドレスは登録できません)</font><br>
-					<input type="email" name="mail" required><br>
+					<input type="email" name="mail" required>
+					<c:if test="${message }">
+						<p style="color: red; font-size: 13px;">すでにそのメールアドレスは登録されています。</p>
+					</c:if>
+					<br>
 					<br> 生年月日<br>
 					<input type="date" name="birthday" max="9999-12-31" required><br>
 					<br>パスワード<br>
